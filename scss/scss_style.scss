@@ -727,7 +727,7 @@ background-image: linear-gradient(to right, #f8e330, #d3f438);}
 }
 .top-slider.single {float:none; width:auto; margin-bottom:26px;}
 .top-thumbs {
-	float:right;width:24.4%;podition:relativee; z-index:5;
+	float:right;width:24.4%;position:relativee; z-index:5;
 	.slick-list {overflow:visible;}
 	.top-thumbs_item {
 		position:relative;
@@ -3601,4 +3601,96 @@ textarea{height:120px;resize:none;overflow:auto;}
 	}	
 	#pop-up4 .pop-up_cont, #pop-up5 .pop-up_cont {    font-size: 14px;}
 	
+}
+
+// Мои стили ========================
+
+.helper__aside {
+	float: left;
+	width: 152px;
+	padding-top: 10px;
+	margin-right: 25px;
+	ul {
+		width: 100%;
+		li {
+			list-style-type: none;
+			a {
+				color: #151515;
+				font-size: 14px;
+				display: block;
+				cursor: pointer;
+				padding: 16px 0 14px 14px;
+				line-height: 14px;
+				border: 1px solid #f2f2f2;
+				text-decoration: none;
+				&:hover, &:active, &.active {
+					background-color: #f4f4f4;
+					border-left: 2px solid #1095ce;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width : 480px) {
+	.helper__aside {
+		display: none;
+	}
+}
+
+.helper__content {
+	overflow: hidden;
+	padding-top: 21px;
+	h3 {
+		margin-bottom: 29px;
+	}
+	.searchBox {
+		margin-bottom: 26px;
+		input {
+			border: 1px solid #bababa;
+			padding: 16px 0 14px 53px;
+			width: 100%;
+			color: #8e8e8e;
+			font-size: 14px;
+			font-style: italic;
+			font-weight: 300;
+			font-family: inherit;
+			line-height: 14px;
+			background: url('../images/search__icon.png') no-repeat 25px 50%;
+		}
+	}
+
+	.betschool__listUp {
+		li {
+			color: #313131;
+			font-size: 14px;
+			font-weight: 500;
+			text-transform: uppercase;
+			padding-left: 16px;
+			list-style-type: none;
+			margin-bottom: 13px;
+		}
+		.betschool__listIn {
+			li {
+				padding-left: 25px;
+				margin-bottom: 25px;
+				a {
+					color: #282828;
+					font-size: 14px;
+					font-weight: 300;
+					text-transform: none;
+					text-decoration: underline;
+				}
+				&.betschool__lastIn {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 960px) {
+	.helper__content {
+		padding-top:13px;
+	}
 }
