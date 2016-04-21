@@ -14,7 +14,11 @@
 .mCSB_scrollTools .mCSB_draggerContainer{position:absolute;top:0px;left:0px;bottom:0px;right:0;height:auto;width:6px;}
 .mCSB_scrollTools a + .mCSB_draggerContainer{margin:13px 0;}
 .mCSB_scrollTools .mCSB_draggerRail{width:6px;height:100%;margin:0 auto;}
-.mCSB_scrollTools .mCSB_dragger{background:#d2d2d2;cursor:pointer;width:6px;z-index:1;}
+.mCSB_scrollTools .mCSB_dragger{background:#d2d2d2;cursor:pointer;width:6px;z-index:1;-webkit-transition: opaciti 0.8s;
+   -moz-transition: opaciti 0.8s;
+    -ms-transition: opaciti 0.8s;
+     -o-transition: opaciti 0.8s;
+        transition: opaciti 0.8s;}
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{position:relative;width:6px;margin:0 auto;text-align:center;}
 .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar,
 .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar{width:12px;}
