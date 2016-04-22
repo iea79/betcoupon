@@ -14,7 +14,7 @@ $(document).ready(function(){
 				answer_div.removeClass('quiz').addClass('no');
 				// нужно подсветить правильный ответ
 				$("div.quiz[data-question='" + response.right + "']").addClass('yes');
-			}
+			}
 
 			if(response.cur == 'Y')
 			{
@@ -55,5 +55,10 @@ $(document).ready(function(){
 
 
 	// END ODY custom functions
+
+	$('.helper__dropdownLink').click(function() {
+		$(this).toggleClass('active');
+		$(this).parent().find('.helper__dropdownText').toggleClass('open');
+	});
 
 });
