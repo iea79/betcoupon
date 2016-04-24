@@ -261,6 +261,9 @@ h5 {margin:0 auto 27px; font-weight:400;
 				overflow:hidden;
 				display: table;
 				width: 71%;
+				@media (max-width: 900px) {
+					width: 80%;
+				}
 			}
 			li { display: table-cell;position: relative; text-align: center;
 				ul {display:none;}
@@ -2541,7 +2544,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 			.logo-txt {display:none;}
 		}
 		.menu-line {
-			.nav a {    padding: 0px 7px;}
+			.nav a {    padding: 0px 7px;    font-size: 12px;}
 			.ico-menu {    margin: -1px 0px 0 0;
 				a {margin: 0 0 0 7px;}
 			}
@@ -2807,17 +2810,24 @@ textarea{height:120px;resize:none;overflow:auto;}
 				a {margin:0;}	
 			}
 		}
-		.menu-line {background:#333333;
+		.menu-line {background:#333333;display: block;
 			height:40px;
 			.nav {background:#333333;display:none;width:245px;margin:0; margin-top:-45px;
 				position:absolute;top:100%;left:0;
-				li {border-bottom:1px solid #191919;display:block;margin:0;
+				ul {
+					display: block;
+					width: 100%;
+				}
+				li {border-bottom:1px solid #191919;display:block;text-align:left;
 
 					a {    padding: 0px 3px 0 13px;    font-size: 14px;    line-height: 38px; white-space:nowrap; /*background:url(../images/icons/arr6.png) no-repeat 221px center;*/}
 					/*a:hover {background:url(../images/icons/arr1.png) no-repeat 221px center #000000;}	*/
 					a.parent {background:url(../images/icons/arr6.png) no-repeat 221px center;}					  	
 					a:hover {background-color:#000;}	
 					a.active {background-color:transparent;	}
+					&.mob {
+						display: block;
+					}
 				}			
 				li.open {
 					> a.parent {background:url(../images/icons/arr5.png) no-repeat 221px center;}
@@ -4218,6 +4228,16 @@ textarea{height:120px;resize:none;overflow:auto;}
 	}
 }
 
+@media (max-width: 639px) {
+	.helper__aside {
+		display: none;
+	}
+	#header .cont-in {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
 @media (max-width: 586px) {
 	.ask_answer__questionsButtons button {
 		text-align: center;
@@ -4235,9 +4255,6 @@ textarea{height:120px;resize:none;overflow:auto;}
 }
 
 @media (max-width : 480px) {
-	.helper__aside {
-		display: none;
-	}
 	.helper__listDropdown .helper__dropdownText {
 		li {
 			padding-left:0 !important;
