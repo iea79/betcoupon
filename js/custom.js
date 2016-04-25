@@ -56,7 +56,9 @@ $(document).ready(function(){
 
 	// END ODY custom functions
 
-	$('.helper__dropdownLink').click(function() {
+	$('.helper__dropdownLink').click(function(e) {
+		e.preventDefault();
+
 		$(this).toggleClass('active');
 		$(this).parent().find('.helper__dropdownText').toggleClass('open');
 	});
