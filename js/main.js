@@ -281,6 +281,7 @@ $(document).ready(function(){
 		advanced:{autoExpandHorizontalScroll:true},
 		scrollInertia: 10,
         autoHideScrollbar: false,
+        autoDraggerLength: false,
         callbacks:{
             whileScrolling:function(){
                 $(this).find('.mCSB_dragger').css('opacity', '1');
@@ -303,6 +304,24 @@ $(document).ready(function(){
         },1000);
     });
 	
+    //curstom horizontal scroll
+    $(".horizontal_scroll").mCustomScrollbar({
+        axis:"x",
+        scrollButtons:{enable:false},
+        advanced:{autoExpandHorizontalScroll:true},
+        scrollInertia: 10,
+        mouseWheel:{ enable: false },
+        callbacks:{
+            onScrollStart:function(){
+                $(this).addClass('hide_arrow');
+            },
+            onTotalScrollBack:function () {
+                $(this).removeClass('hide_arrow');
+            }
+        }
+    });
+
+
 	//news tabs
 	$('ul.tabs li:first-child').addClass('active');
 	$('ul.tabs li').each(function(i) {
