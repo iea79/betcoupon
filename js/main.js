@@ -295,7 +295,22 @@ $(document).ready(function(){
         }
 	});
 
-    $(".scroll").mouseenter(function() {
+    //curstom horizontal scroll
+    $(".horizontal_scroll").mCustomScrollbar({
+        axis:"x",
+        // scrollButtons:{enable:false},
+        advanced:{autoExpandHorizontalScroll:true},
+        scrollInertia: 300,
+        autoHideScrollbar: true,
+        mouseWheel:{ enable: false },
+        callbacks:{
+            onScrollStart:function(){
+                $(this).addClass('hide_arrow');
+            }
+        }
+    });
+
+    $(".scroll,.horizontal_scroll").mouseenter(function() {
         var scrollBar = $(this).find('.mCSB_dragger');
 
         scrollBar.css('opacity', '1');
@@ -304,23 +319,6 @@ $(document).ready(function(){
         },1000);
     });
 	
-    //curstom horizontal scroll
-    $(".horizontal_scroll").mCustomScrollbar({
-        axis:"x",
-        scrollButtons:{enable:false},
-        advanced:{autoExpandHorizontalScroll:true},
-        scrollInertia: 300,
-        mouseWheel:{ enable: false },
-        callbacks:{
-            onScrollStart:function(){
-                $(this).addClass('hide_arrow');
-            }
-            // onTotalScrollBack:function () {
-            //     $(this).removeClass('hide_arrow');
-            // }
-        }
-    });
-
 
 	//news tabs
 	$('ul.tabs li:first-child').addClass('active');
@@ -784,5 +782,5 @@ var grayscale = (function(){
 })();
 $(window).load(function(){
 	
-grayscale( $('.slider-partn img') );
+    grayscale( $('.slider-partn img') );
 });
