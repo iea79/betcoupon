@@ -309,15 +309,15 @@ $(document).ready(function(){
         axis:"x",
         scrollButtons:{enable:false},
         advanced:{autoExpandHorizontalScroll:true},
-        scrollInertia: 10,
+        scrollInertia: 300,
         mouseWheel:{ enable: false },
         callbacks:{
             onScrollStart:function(){
                 $(this).addClass('hide_arrow');
-            },
-            onTotalScrollBack:function () {
-                $(this).removeClass('hide_arrow');
             }
+            // onTotalScrollBack:function () {
+            //     $(this).removeClass('hide_arrow');
+            // }
         }
     });
 
