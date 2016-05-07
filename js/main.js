@@ -273,13 +273,17 @@ $(document).ready(function(){
        ] 
     });
 
+    $('#current_user_list').stick_in_parent({
+        parent: $('.narg-rows'),
+        recalc_every: true
+    })
 	
 	//curstom scroll
 	$(".scroll").mCustomScrollbar({
 		axis:"y",
 		scrollButtons:{enable:false},
 		advanced:{autoExpandHorizontalScroll:true},
-		scrollInertia: 10,
+		scrollInertia: 200,
         autoHideScrollbar: false,
         autoDraggerLength: false,
         callbacks:{
@@ -300,7 +304,7 @@ $(document).ready(function(){
         axis:"x",
         // scrollButtons:{enable:false},
         advanced:{autoExpandHorizontalScroll:true},
-        scrollInertia: 300,
+        scrollInertia: 600,
         autoHideScrollbar: true,
         mouseWheel:{ enable: false },
         callbacks:{
@@ -309,6 +313,19 @@ $(document).ready(function(){
             }
         }
     });
+
+    // viewportChecker
+    // $('.current_user_list').viewportChecker({
+    //     classToAdd:'visible',
+    //     callbackFunction: function(elem, add){
+    //         $('.current_user').hide();
+    //     },
+    //     callbackFunction: function(elem, remove){
+    //         $('.current_user').show();
+    //     },
+    //     repeat: true,
+    // });
+
 
     $(".scroll,.horizontal_scroll").mouseenter(function() {
         var scrollBar = $(this).find('.mCSB_dragger');
@@ -344,15 +361,19 @@ $(document).ready(function(){
 		}        
 	});
 
-	//
+	// Countdown
 	var endDate = "April 7, 2016 15:03:25";
-	$('.countdown').countdown({
+
+    $('.countdown').countdown({
           date: endDate,
+          onEnd: function() {
+              $(this.el).closest('.slide_cont').find('.btn').attr('disabled', true);
+          },
           render: function(data) {
-            $(this.el).html("<div><span><b>" + this.leadingZeros(data.days, 2) + "</b>дней</span><i>&nbsp;</i><span><b>" + this.leadingZeros(data.hours, 2) + "</b>часов</span><i>:</i><span><b>" + this.leadingZeros(data.min, 2) + "</b>мин</span><i>:</i><span><b>" + this.leadingZeros(data.sec, 2) + "</b>сек</span></div>");
-          }
+            $(this.el).html("<div><span><b>" + this.leadingZeros(data.days, 2) + "</b>дней</span> <i>&nbsp;</i> <span><b>" + this.leadingZeros(data.hours, 2) + "</b>часов</span> <i>:</i> <span><b>" + this.leadingZeros(data.min, 2) + "</b>мин</span> <i>:</i> <span><b>" + this.leadingZeros(data.sec, 2) + "</b>сек</span></div>");
+          },
     });
-	$('.countdown2').countdown({
+    $('.countdown2').countdown({
           date: endDate,
           render: function(data) {
             $(this.el).html("<div><span class='zero'><b>" + this.leadingZeros(data.days, 2) + "</b>дней</span> <i>&nbsp;</i> <span><b>" + this.leadingZeros(data.hours, 2) + "</b>часов</span> <i>:</i> <span><b>" + this.leadingZeros(data.min, 2) + "</b>мин</span> <i>:</i> <span><b>" + this.leadingZeros(data.sec, 2) + "</b>сек</span></div>");
@@ -464,8 +485,66 @@ $(document).ready(function(){
         $("html, body").animate({scrollTop: $(this).offset().top-15}, 1000);
     });
 	
+    // Button's more
+    var vieContain = $('body').find('.limited__container').outerHeight();
+
+    if (vieContain <= 1800 ) {
+        $('.loadMore').hide();
+    } else {
+        $('.loadMore').show();
+    };
+
+    $('.loadMore').on('click', function(event) {
+        event.preventDefault();
+        $('.limited__container').css('maxHeight', 'none');
+        $(this).css('position', 'static');
+        $(this).parent().css('position', 'static');
+    });
+
+
+    // Change rate ajax
+    var ajax_rating ={ 
+
+        updInterval: 5000, // 5 сек. - интервал времени между запросами
+        url: 'ajax.php', // скрипт который должен отвечать на Ajax запросы
+        init: function(){
+            var self = ajax_rating;
+            setInterval($.proxy(ajax_rating.requestData, self), self.updInterval);
+        },
+          
+        requestData: function(){
+            var self = ajax_rating;
+              
+            $.ajax({
+                url: self.url,
+                type: 'GET',
+                dataType: 'json',
+                success: function(data){ 
+                    console.log('Success');
+                    $('.user_rate_inline').css('width', data.rateLineWidth).html(data.rateLinePoint + ' баллов');
+                    $('.user_rate_level').html(data.rateLineLevel);
+                }
+            });
+        },
+    };
+
+    ajax_rating.init();
+
+
+
+    // .scrollTop()
+
 });
 
+// Скролл для текушего пользователя в блоке Рейтинг пользователей
+// $(document).scroll(function () {
+//     s_top = $("body").scrollTop();
+//     yes = $(".current_user + tr").offset().top;
+//     if(s_top > yes){
+//         $('.current_user').css('position', 'static');
+//         console.log("Yes");
+//     }
+// });
 
 
 
@@ -779,7 +858,11 @@ var grayscale = (function(){
     
     return init;
 
+
 })();
+
+
+
 $(window).load(function(){
 	
     grayscale( $('.slider-partn img') );
