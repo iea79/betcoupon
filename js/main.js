@@ -273,11 +273,6 @@ $(document).ready(function(){
        ] 
     });
 
-    $('#current_user_list').stick_in_parent({
-        parent: $('.narg-rows'),
-        recalc_every: true
-    })
-	
 	//curstom scroll
 	$(".scroll").mCustomScrollbar({
 		axis:"y",
@@ -295,9 +290,12 @@ $(document).ready(function(){
                 setTimeout(function () {
                     scrollBar.css('opacity', '0');
                 },1500);
+            },
+            onInit:function(){
+                // console.log("Horizontal scrolling init");
             }
-        }
-	});
+        },
+    });
 
     //curstom horizontal scroll
     $(".horizontal_scroll").mCustomScrollbar({
@@ -313,19 +311,6 @@ $(document).ready(function(){
             }
         }
     });
-
-    // viewportChecker
-    // $('.current_user_list').viewportChecker({
-    //     classToAdd:'visible',
-    //     callbackFunction: function(elem, add){
-    //         $('.current_user').hide();
-    //     },
-    //     callbackFunction: function(elem, remove){
-    //         $('.current_user').show();
-    //     },
-    //     repeat: true,
-    // });
-
 
     $(".scroll,.horizontal_scroll").mouseenter(function() {
         var scrollBar = $(this).find('.mCSB_dragger');
