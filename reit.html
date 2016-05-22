@@ -13,106 +13,6 @@
 	<!--[if lt IE 9]><script src="js/css3-mediaqueries.js"></script><![endif]-->
 	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
-	<!-- Chart script -->
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript">
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
-
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
-
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('date', 'Дни');
-        data.addColumn('number', 'Линия продуктивности');
-        data.addColumn('number', 'Линия результатов');
-        
-        data.addRows([
-			[new Date(2016, 4,1), 3000, 5000],
-			[new Date(2016, 4,2), 1000, 2000],
-			[new Date(2016, 4,3), 2000, 2200],
-			[new Date(2016, 4,4), 3000, 5000],
-			[new Date(2016, 4,5), 1000, 2000],
-			[new Date(2016, 4,6), 1500, 2000],
-			[new Date(2016, 4,7), 1500, 2500],
-			[new Date(2016, 4,8), 1000, 2000],
-			[new Date(2016, 4,9), 2000, 3000],
-			[new Date(2016, 4,10), 3000, 5000],
-			[new Date(2016, 4,11), 1000, 2000],
-			[new Date(2016, 4,12), 1000, 2000],
-			[new Date(2016, 4,13), 1000, 2000],
-			[new Date(2016, 4,14), 2000, 5000],
-			[new Date(2016, 4,15), 1000, 2000],
-			[new Date(2016, 4,16), 3000, 5000],
-			[new Date(2016, 4,17), 1000, 2000],
-			[new Date(2016, 4,18), 1000, 2000],
-			[new Date(2016, 4,19), 1000, 2000],
-			[new Date(2016, 4,20), 2000, 5000],
-			[new Date(2016, 4,21), 1000, 2000],
-			[new Date(2016, 4,22), 1000, 2000],
-			[new Date(2016, 4,23), 1000, 2000],
-			[new Date(2016, 4,24), 2000, 5000],
-			[new Date(2016, 4,25), 1000, 2000],
-			[new Date(2016, 4,26), 3000, 5000],
-			[new Date(2016, 4,27), 1000, 2000],
-			[new Date(2016, 4,28), 1000, 2000],
-			[new Date(2016, 4,29), 1000, 2000],
-			[new Date(2016, 4,30), 2000, 5000],
-			[new Date(2016, 4,31), 2000, 5000],
-        ]);
-
-        // Set chart options
-        var options = {
-        	'width':'100%',
-            'height':230,
-            backgroundColor: '#f3f3f3',
-            chartArea:{
-            	left:35,
-            	top:22,
-            	right: 1,
-            	width:'100%',
-            	height:'80%'
-            },
-            legend: {
-            	position: 'bottom',
-            },
-            vAxis: {
-            	format:'#####',
-                baseline: {
-                	color:'#cdcdcd',
-                    width: '5px'
-                },
-                textStyle: {
-                	color:'#cdcdcd',
-                },
-                minorGridlines: {
-                	color: '#ccc',
-                    count: 1
-                },          	
-            	minValue: '0',
-            },
-            hAxis: {
-            	logscale: true, 
-				textPosition: 'none',
-                minorGridlines: {
-                	color: '#ccc',
-                    count: 6
-                }            	
-            }
-        };
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.LineChart(document.getElementById('chart_x'));
-        chart.draw(data, options);
-      }
-	</script>
-
 </head>
 <body>   
     <div id="container">
@@ -406,9 +306,7 @@
 									<p>На графике вы можете следить за тем, сколько баллов вы получаете каждый день. Линия продуктивности отмечает тот уровень баллов, который вы можете набрать, выполнив все Миссии дня. </p>
 								</div>
 								<div class="col-big">
-									<div id="chart_x" class="graf"></div>
-									<div class="graf_label_x">Баллы</div>
-									<div class="graf_label_y">Дни</div>
+									<div id="chart_x" class="graf" style="min-width: 310px; height: 240px"></div>
 								</div>
 								
 							</div>
@@ -607,5 +505,178 @@
 <script type="text/javascript" src="js/jquery.fancybox.js"></script>
 <script type="text/javascript" src="js/jquery.validate.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
+	<!-- Chart script -->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script>
+	var maxAxisX = 6000;
+	var minAxisX = 1000;
+
+		$(function() {
+		  Highcharts.setOptions({
+		    global: {
+		      useUTC: true,
+		    },
+		    lang: {
+		      shortMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сеньтябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+		      weekdays: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+		      numericSymbols: '',
+		    },
+		    decimalPoint: "."
+		  });
+
+		  $('#chart_x').highcharts({
+		    title: {
+		      //text: 'Snow depth at Vikjafjellet, Norway'
+		    },
+		    chart: {
+		      backgroundColor: '#f3f3f3',
+		      //height: 320,
+		      margin: [20, 1, 40, 40],
+		      //plotBackgroundImage: 'http://i59.beon.ru/44/36/1773644/50/77949950/02.png'
+		      plotBorderColor: '#cdcdcd',
+		      plotBorderWidth: 1,
+		      //zoomType: 'x',
+		    },
+		    colors: ['#68bc88', '#a596d1'],
+		    credits: {
+		      enabled: false
+		    },
+		    xAxis: {
+		      type: 'datetime',
+		      dateTimeLabelFormats: { // don't display the dummy year
+		        day: '%A, %e %b, %Y',
+		        //month: '%b \'%y',
+		        //year: '%b'
+		      },
+		      title: {
+		        text: 'Дни',
+		        align: 'low',
+		        color: '#040404',
+		        y: -73
+		      },
+		      lineColor: '#cdcdcd',
+		      lineWidth: 3,
+		      tickColor: "#cdcdcd",
+		      tickPosition: "inside",
+		      tickLength: 180,
+		      tickInterval: 1
+		    },
+		    yAxis: {
+		      title: {
+		        text: 'Баллы',
+		        align: 'high',
+		        color: '#040404',
+		        rotation: 0,
+		        offset: -35,
+		        y: -10
+		      },
+		      tickInterval: 1000,
+		      lineColor: '#cdcdcd',
+		      lineWidth: 3,
+		      GridLineColor: '#cdcdcd',
+              max: maxAxisX,
+		      min: minAxisX,
+              startOnTick: false,
+              endOnTick: false
+		    },
+		    tooltip: {
+		      //headerFormat: '<b>{point.x:%A, %b %e, %Y}</b><br>',
+		      xDateFormat: '%d.%m.%Y',
+		      pointFormat: '<b>{point.y} баллов</b>',
+		      backgroundColor: '#fffbbe',
+		      borderColor: '#e8dbaa',
+		      borderRadius: 5,
+		      shape: false,
+		      shadow: false
+		    },
+
+		    plotOptions: {
+		      series: {
+	          cursor: 'pointer',
+		        marker: {
+		          enabled: false,
+	              states: {
+	                hover: {
+	                  enabled: false
+	                }
+	              }
+		        }
+		      }
+		    },
+
+		    series: [{
+		      name: 'Линия результатов',
+		      data: [
+		        [Date.UTC(2016, 07, 01), 2700],
+		        [Date.UTC(2016, 07, 02), 3000],
+		        [Date.UTC(2016, 07, 03), 4000],
+		        [Date.UTC(2016, 07, 04), 5000],
+		        [Date.UTC(2016, 07, 05), 4400],
+		        [Date.UTC(2016, 07, 06), 4350],
+		        [Date.UTC(2016, 07, 07), 4300],
+		        [Date.UTC(2016, 07, 08), 4000],
+		        [Date.UTC(2016, 07, 09), 4000],
+		        [Date.UTC(2016, 07, 10), 4000],
+		        [Date.UTC(2016, 07, 11), 4200],
+		        [Date.UTC(2016, 07, 12), 4400],
+		        [Date.UTC(2016, 07, 13), 4350],
+		        [Date.UTC(2016, 07, 14), 4300],
+		        [Date.UTC(2016, 07, 15), 2700],
+		        [Date.UTC(2016, 07, 16), 3000],
+		        [Date.UTC(2016, 07, 17), 4000],
+		        [Date.UTC(2016, 07, 18), 2200],
+		        [Date.UTC(2016, 07, 19), 4400],
+		        [Date.UTC(2016, 07, 20), 2000],
+		        [Date.UTC(2016, 07, 21), 4300],
+		        [Date.UTC(2016, 07, 22), 4400],
+		        [Date.UTC(2016, 07, 23), 2000],
+		        [Date.UTC(2016, 07, 24), 4300],
+		        [Date.UTC(2016, 07, 25), 2700],
+		        [Date.UTC(2016, 07, 26), 3000],
+		        [Date.UTC(2016, 07, 27), 4000],
+		        [Date.UTC(2016, 07, 28), 2700],
+		        [Date.UTC(2016, 07, 29), 4400],
+		        [Date.UTC(2016, 07, 30), 2500],
+		      ]
+		    }, {
+		      name: 'Линия продуктивности',
+		      data: [
+		        [Date.UTC(2016, 07, 01), 1700],
+		        [Date.UTC(2016, 07, 02), 2000],
+		        [Date.UTC(2016, 07, 03), 3000],
+		        [Date.UTC(2016, 07, 04), 4000],
+		        [Date.UTC(2016, 07, 05), 3400],
+		        [Date.UTC(2016, 07, 06), 3350],
+		        [Date.UTC(2016, 07, 07), 3300],
+		        [Date.UTC(2016, 07, 08), 3000],
+		        [Date.UTC(2016, 07, 09), 3000],
+		        [Date.UTC(2016, 07, 10), 3000],
+		        [Date.UTC(2016, 07, 11), 3200],
+		        [Date.UTC(2016, 07, 12), 3400],
+		        [Date.UTC(2016, 07, 13), 3350],
+		        [Date.UTC(2016, 07, 14), 3300],
+		        [Date.UTC(2016, 07, 15), 1700],
+		        [Date.UTC(2016, 07, 16), 2000],
+		        [Date.UTC(2016, 07, 17), 3000],
+		        [Date.UTC(2016, 07, 18), 3200],
+		        [Date.UTC(2016, 07, 19), 3400],
+		        [Date.UTC(2016, 07, 20), 1500],
+		        [Date.UTC(2016, 07, 21), 3300],
+		        [Date.UTC(2016, 07, 22), 3400],
+		        [Date.UTC(2016, 07, 23), 3000],
+		        [Date.UTC(2016, 07, 24), 3300],
+		        [Date.UTC(2016, 07, 25), 2900],
+		        [Date.UTC(2016, 07, 26), 2000],
+		        [Date.UTC(2016, 07, 27), 3000],
+		        [Date.UTC(2016, 07, 28), 2200],
+		        [Date.UTC(2016, 07, 29), 3400],
+		        [Date.UTC(2016, 07, 30), 2000],
+		      ]
+		    }]
+		  });
+		});
+	</script>
+
 </body>
 </html>

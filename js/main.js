@@ -277,13 +277,26 @@ $(document).ready(function(){
 	$(".scroll").mCustomScrollbar({
 		axis:"y",
 		scrollButtons:{enable:false},
-		advanced:{autoExpandHorizontalScroll:true},
+		// advanced:{autoExpandHorizontalScroll:true},
 		scrollInertia: 200,
         autoHideScrollbar: false,
         autoDraggerLength: false,
+        contentTouchScroll: 150,
+
+        // onTotalScrollOffset:0, 
+        // alwaysTriggerOffsets:false,
+
         callbacks:{
             whileScrolling:function(){
                 $(this).find('.mCSB_dragger').css('opacity', '1');
+                if($("#current_user_list").is(":mcsInView")){
+                    console.log("if mcsInView");
+                    $('#current_user_list').addClass("highlight-class");
+                }
+                 else {
+                    console.log("else mcsInView");
+                    $('#current_user_list').removeClass("highlight-class");
+                }
             },
             onScroll:function(){
                 var scrollBar = $(this).find('.mCSB_dragger');
@@ -291,9 +304,16 @@ $(document).ready(function(){
                     scrollBar.css('opacity', '0');
                 },1500);
             },
-            onInit:function(){
-                // console.log("Horizontal scrolling init");
-            }
+            onTotalScrollBack:function(){ 
+                console.log("scrolled to top");
+            }, 
+            onTotalScroll:function(){ 
+                console.log("scrolled to bottom");
+            }, 
+            onTotalScrollOffset: 150,
+            onTotalScrollBackOffset: 150, 
+            alwaysTriggerOffsets:false
+
         },
     });
 
@@ -520,16 +540,6 @@ $(document).ready(function(){
     // .scrollTop()
 
 });
-
-// Скролл для текушего пользователя в блоке Рейтинг пользователей
-// $(document).scroll(function () {
-//     s_top = $("body").scrollTop();
-//     yes = $(".current_user + tr").offset().top;
-//     if(s_top > yes){
-//         $('.current_user').css('position', 'static');
-//         console.log("Yes");
-//     }
-// });
 
 
 

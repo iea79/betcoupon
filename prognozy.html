@@ -121,20 +121,13 @@
 		<div id="content">			
 			<section class="section-user">
 				<div class="cont-in">							
-					<ul class="user-menu mob-hid">
+					<ul class="user-menu horizontal_scroll">
 						<li><a href="#">Профиль</a></li>
 						<li><a href="#">Оповещения</a></li>
 						<li class="active"><a href="#">Достижения</a></li>
 						<li><a href="#">Призы</a></li>
 						<li><a href="#">Избранное</a></li>
 					</ul>
-					<div class="user-menu-slider">							
-							<div class="slick-slide"><a href="#">Профиль</a></div>
-							<div class="slick-slide"><a href="#">Оповещения</a></div>
-							<div class="slick-slide active"><a href="#">Достижения</a></div>
-							<div class="slick-slide"><a href="#">Призы</a></div>
-							<div class="slick-slide"><a href="#">Избранное</a></div>
-						</div>
 					<div class="user-block">								
 						<div class="user-ava"><img src="images/img69.jpg" alt=""/></div>					
 						<div class="user-short">
@@ -302,8 +295,10 @@
 ваших прогнозов 
 в течении месяца.</p>
 								</div>
-								<div class="col-big">
-									<div class="graf"><img src="images/graf.png" alt=""/></div>
+								<div class="col-big chart_wrapp">
+									<div id="chart_x_single" style="min-width: 310px; height: 320px; margin: 0 auto"></div>
+									<div class="zero_label">Дни</div>
+									<!-- <div class="graf"><img src="images/graf.png" alt=""/></div> -->
 								</div>
 								
 							</div>
@@ -509,5 +504,147 @@
 <script type="text/javascript" src="js/jquery.fancybox.js"></script>
 <script type="text/javascript" src="js/jquery.validate.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
+	<!-- Chart script -->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script>
+		// Макмисальный и мимнимальный диапазон
+		var maxAxisX = 3000;
+		var minAxisX = -3000;
+
+		$(function() {
+		  Highcharts.setOptions({
+		    global: {
+		      useUTC: true,
+		    },
+		    lang: {
+		      numericSymbols: '',
+		    },
+		    decimalPoint: "."
+		  });
+
+		  $('#chart_x_single').highcharts({
+		    title: {
+		      //text: 'Snow depth at Vikjafjellet, Norway'
+		    },
+		    chart: {
+		      backgroundColor: '#f3f3f3',
+		      margin: [20, 1, 40, 50],
+		      plotBorderColor: '#cdcdcd',
+		      plotBorderWidth: 1,
+		    },
+		    colors: ['#68bc88', '#a596d1'],
+		    credits: {
+		      enabled: false
+		    },
+		    xAxis: {
+		      type: 'datetime',
+		      dateTimeLabelFormats: { // don't display the dummy year
+		        //day: '%A, %e %b, %Y',
+		        //month: '%b \'%y',
+		        //year: '%b'
+		      },
+		      lineColor: '#cdcdcd',
+		      tickColor: "#cdcdcd",
+		      tickPosition: "inside",
+		      tickLength: 260,
+		      tickInterval: 1,
+		    },
+		    yAxis: {
+		      title: {
+		        text: 'Баллы',
+		        align: 'high',
+		        color: '#040404',
+		        rotation: 0,
+		        offset: -35,
+		        y: -10
+		      },
+            plotLines: [{
+                color: '#cdcdcd',
+                width: 3,
+                value: 0,
+                useHTML: true,
+                label: {
+                	text: '<span>Дни</span>',
+                    x: -35,
+                    y: 3,
+                    style: {
+                    	'backgroundColor': '#f3f3f3',
+                    }
+                }
+            }],
+              tickInterval: 500,
+		      lineColor: '#cdcdcd',
+		      lineWidth: 3,
+              max: maxAxisX,
+		      min: minAxisX,
+              startOnTick: false,
+              endOnTick: false
+		    },
+		    tooltip: {
+		      xDateFormat: '%d.%m.%Y',
+		      pointFormat: '<b>{point.y} баллов</b>',
+		      backgroundColor: '#fffbbe',
+		      borderColor: '#e8dbaa',
+		      borderRadius: 5,
+		      shape: false,
+		      shadow: false
+		    },
+
+		    plotOptions: {
+		      series: {
+              turboThreshold: false,
+	          cursor: 'pointer',
+		        marker: {
+		          enabled: false,
+	              states: {
+	                hover: {
+	                  enabled: false
+	                }
+	              }
+		        }
+		      }
+		    },
+
+		    series: [{
+		      name: null,
+		      data: [
+		        [Date.UTC(2016, 07, 01), 700],
+		        [Date.UTC(2016, 07, 02), 200],
+		        [Date.UTC(2016, 07, 03), 300],
+		        [Date.UTC(2016, 07, 04), 400],
+		        [Date.UTC(2016, 07, 05), 340],
+		        [Date.UTC(2016, 07, 06), 335],
+		        [Date.UTC(2016, 07, 07), 330],
+		        [Date.UTC(2016, 07, 08), -300],
+		        [Date.UTC(2016, 07, 09), -350],
+		        [Date.UTC(2016, 07, 10), 300],
+		        [Date.UTC(2016, 07, 11), 320],
+		        [Date.UTC(2016, 07, 12), 340],
+		        [Date.UTC(2016, 07, 13), 335],
+		        [Date.UTC(2016, 07, 14), 330],
+		        [Date.UTC(2016, 07, 15), 1170],
+		        [Date.UTC(2016, 07, 16), 1000],
+		        [Date.UTC(2016, 07, 17), 300],
+		        [Date.UTC(2016, 07, 18), 320],
+		        [Date.UTC(2016, 07, 19), 340],
+		        [Date.UTC(2016, 07, 20), 1500],
+		        [Date.UTC(2016, 07, 21), 1330],
+		        [Date.UTC(2016, 07, 22), 1340],
+		        [Date.UTC(2016, 07, 23), 300],
+		        [Date.UTC(2016, 07, 24), 330],
+		        [Date.UTC(2016, 07, 25), 290],
+		        [Date.UTC(2016, 07, 26), -1200],
+		        [Date.UTC(2016, 07, 27), -1300],
+		        [Date.UTC(2016, 07, 28), -1400],
+		        [Date.UTC(2016, 07, 29), 340],
+		        [Date.UTC(2016, 07, 30), 1500],
+		      ]
+		    }]
+		  });
+		});
+
+	</script>
+
 </body>
 </html>
