@@ -340,6 +340,26 @@ $(document).ready(function(){
             scrollBar.css('opacity', '0');
         },1000);
     });
+
+    // Vertical scroll with Baron.js
+    // $('.vertical_scroll').baron({
+    //     root: '.baron',
+    //     scroller: '.baron__scroller',
+    //     bar: '.baron__bar',
+    //     scrollingCls: '_scrolling',
+    //     draggingCls: '_dragging'
+    // }).fix({
+    //     elements: '.current_user',
+    //     outside: 'current_user_state_fixed',
+    //     before: 'current_user_position_top',
+    //     after: 'current_user_position_bottom',
+    //     clickable: true
+    // }).controls({
+    //     // Element to be used as interactive track. Note: it could be different from 'track' param of baron.
+    //     track: '.baron__track',
+    //     forward: '.baron__down',
+    //     backward: '.baron__up'
+    // });
 	
 
 	//news tabs
@@ -861,4 +881,37 @@ var grayscale = (function(){
 $(window).load(function(){
 	
     grayscale( $('.slider-partn img') );
+
+
+    baron({
+        impact:'scroller',
+        // resizeDebounce: 2,
+        root: '.baron',
+        scroller: '.baron__scroller',
+        bar: '.baron__bar',
+        scrollingCls: '_scrolling',
+        draggingCls: '_dragging'
+    }).fix({
+        elements: '.current_user',
+        outside: 'current_user_state_fixed',
+        // before: 'current_user_position_top',
+        after: 'current_user_position_bottom',
+        clickable: true
+    }).controls({
+        // Element to be used as interactive track. Note: it could be different from 'track' param of baron.
+        // track: '.baron__track',
+        // forward: '.baron__down',
+        // backward: '.baron__up'
+    });
+
+    $(".baron").mouseenter(function() {
+        var scrollBar = $(this);
+
+        scrollBar.addClass('_scrolling');
+        setTimeout(function () {
+            scrollBar.removeClass('_scrolling');
+        },1000);
+    });
+
+
 });
