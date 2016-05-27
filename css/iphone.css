@@ -1,7 +1,8 @@
-.baron__scroller {
+.baron__scroller,.horizontall__scroller {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 }
 .baron._macosx .baron__bar {
-    height: 100px !important;
-}
+/*    height: 100px !important;
+*/
+	height: 100px !important;}

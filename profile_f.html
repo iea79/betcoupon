@@ -147,14 +147,16 @@
 		<!-- content -->
 		<div id="content">			
 			<section class="section-user">
-				<div class="cont-in">							
-					<ul class="user-menu horizontal_scroll">
+				<div class="cont-in">
+				<div class="user-menu-clipper horizontall__clipper">
+					<ul class="user-menu horizontall__scroller">
 						<li class="active"><a href="#">Профиль</a></li>
 						<li><a href="#">Оповещения</a></li>
 						<li><a href="#">Достижения</a></li>
 						<li><a href="#">Призы</a></li>
 						<li><a href="#">Избранное</a></li>
 					</ul>
+				</div>							
 					<div class="user-block">								
 						<div class="user-ava-col">
 							<div class="user-ava"><img src="images/img69.jpg" alt=""/></div>
@@ -293,15 +295,28 @@
 							</div>	
 						</div>				
 					</div>	
-
-					<div class="user-cont nobord">
-						<ul class="user-menu-btns horizontal_scroll">
+					
+					<!-- Mobile user menu -->
+					<div class="user-menu-btns-clipper horizontall__clipper mobile">
+						<ul class="user-menu-btns horizontall__scroller">
 							<li class="active"><a href="#">Лента <span class="item_number"></span></a></li>
 							<li><a href="#">Друзья <span class="item_number">213</span></a></li>
 							<li><a href="#">Подписчики <span class="item_number">230</span></a></li>
 							<li><a href="#">Прогнозы <span class="item_number"></span></a></li>
 							<li><a href="#">Обсуждения <span class="item_number"></span></a></li>
 						</ul>
+					</div>
+					<div class="user-cont nobord">
+						<!-- Desktop user menu -->
+						<div class="desktop">
+							<ul class="user-menu-btns">
+								<li class="active"><a href="#">Лента <span class="item_number"></span></a></li>
+								<li><a href="#">Друзья <span class="item_number">213</span></a></li>
+								<li><a href="#">Подписчики <span class="item_number">230</span></a></li>
+								<li><a href="#">Прогнозы <span class="item_number"></span></a></li>
+								<li><a href="#">Обсуждения <span class="item_number"></span></a></li>
+							</ul>
+						</div>
 						<div class="user-block mob-show">
 							<div class="user-ach">
 								<div class="points">900 баллов</div>
@@ -429,8 +444,8 @@
 													<div>13</div><div class="nagr-img"><img src="images/ic6.jpg" alt=""/></div><div>Георгий Вонг</div><div class="td-num">100800</div>
 												</div>
 												<!-- Текущий пользователь -->
-												<div class="header">
-													<div class="current_user table-nagrs-row">
+												<div>
+													<div id="current_user" class="current_user table-nagrs-row">
 														<div>14</div><div class="nagr-img"><img src="images/img69.jpg" alt=""/></div><div>Федор Галицын</div><div class="td-num">100800</div>
 													</div>
 												</div>
@@ -456,6 +471,11 @@
 											        </div>
 											    </div>
 											</div>
+											<!-- begin Current user bottom for mobile -->
+											<div id="current_user__bottom" class="current_user current_user__bottom table-nagrs-row mobile">
+												<div>14</div><div class="nagr-img"><img src="images/img69.jpg" alt=""/></div><div>Федор Галицын</div><div class="td-num">100800</div>
+											</div>
+											<!-- end Current user bottom for mobile -->
 										</div>
 
 										<a href="#" class="arch-link">Посмотреть архив</a>
@@ -516,6 +536,32 @@
 												<div class="upd-txt">Заставить ее играть в атакующий футбол и выиграть 4 матча из 4 под его руководством.</div>
 											</div>	
 										</div>	
+										<div class="upd">
+											<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
+											<div class="upd-cont">
+												<div class="upd-date desktop">Час назад</div>
+												<div class="upd-name"><a href="#">Денис Максимов</a></div>
+												<div class="upd-date mobile">Час назад</div>
+												<div class="upd-txt">Получил нову награду 500 баллов</div>
+											</div>	
+										</div>
+										<div class="upd">
+											<div class="upd-cont">
+												<div class="upd-date desktop">Час назад</div>
+												<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
+												<div class="upd-date mobile">Час назад</div>
+												<div class="upd-txt">Заставить ее играть в атакующий футбол и выиграть 4 матча из 4 под его руководством.</div>
+											</div>	
+										</div>	
+										<div class="upd">
+											<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
+											<div class="upd-cont">
+												<div class="upd-date desktop">Час назад</div>
+												<div class="upd-name"><a href="#">Денис Максимов</a></div>
+												<div class="upd-date mobile">Час назад</div>
+												<div class="upd-txt">Получил нову награду 500 баллов</div>
+											</div>	
+										</div>
 									</div>
 									<button class="bord_more">Показать еще ↓</button>
 								</div>	

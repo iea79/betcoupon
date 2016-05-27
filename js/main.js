@@ -341,27 +341,6 @@ $(document).ready(function(){
         },1000);
     });
 
-    // Vertical scroll with Baron.js
-    // $('.vertical_scroll').baron({
-    //     root: '.baron',
-    //     scroller: '.baron__scroller',
-    //     bar: '.baron__bar',
-    //     scrollingCls: '_scrolling',
-    //     draggingCls: '_dragging'
-    // }).fix({
-    //     elements: '.current_user',
-    //     outside: 'current_user_state_fixed',
-    //     before: 'current_user_position_top',
-    //     after: 'current_user_position_bottom',
-    //     clickable: true
-    // }).controls({
-    //     // Element to be used as interactive track. Note: it could be different from 'track' param of baron.
-    //     track: '.baron__track',
-    //     forward: '.baron__down',
-    //     backward: '.baron__up'
-    // });
-	
-
 	//news tabs
 	$('ul.tabs li:first-child').addClass('active');
 	$('ul.tabs li').each(function(i) {
@@ -882,6 +861,19 @@ $(window).load(function(){
 	
     grayscale( $('.slider-partn img') );
 
+    // baron({
+    //     root: '.horizontall__clipper',
+    //     scroller: '.horizontall__scroller',
+    //     bar: '.horizontall__bar',
+    //     scrollingCls: '_scrolling',
+    //     draggingCls: '_dragging',
+    //     direction: 'h',
+    //     impact: 'scroller',
+    // });
+
+    $(".horizontall__scroller").scroll(function(){
+        $(this).addClass('hide_arrow');
+    });
 
     baron({
         impact:'scroller',
@@ -894,7 +886,7 @@ $(window).load(function(){
     }).fix({
         elements: '.current_user',
         outside: 'current_user_state_fixed',
-        // before: 'current_user_position_top',
+        before: 'current_user_position_top',
         after: 'current_user_position_bottom',
         clickable: true
     }).controls({
@@ -913,5 +905,33 @@ $(window).load(function(){
         },1000);
     });
 
+    $('.table-nagrs').scroll(function() {
+        getCurrentClass();
+        // alert('scroll me');
+
+    });
+        getCurrentClass();
+    $('.table-nagrs').load(function() {
+        // alert('scroll me');
+
+    });
+
+
+    function getCurrentClass() {
+        var listedEl = $('#current_user').hasClass('current_user_state_fixed');
+        var listedEltop = $('#current_user').hasClass('current_user_position_top');
+        var listedElbottom = $('#current_user').hasClass('current_user_position_bottom');
+
+        // var topEl = $('#current_user__top');
+        var bottomEl = $('#current_user__bottom');
+
+        if (listedElbottom == true) {
+            $(bottomEl).show();
+        } else if (listedEl == false) {
+            $(bottomEl).hide();
+        }
+    }
 
 });
+
+window.scrollBy(0, 1);

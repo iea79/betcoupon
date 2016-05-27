@@ -44,6 +44,12 @@ $bordLink: #b5b5b5;
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
 
 @mixin icon {
 	display:inline-block;  
@@ -1455,7 +1461,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 .section-user {padding:20px 0 0; 
 	.mob-show {display:none;}
 }
-.user-menu {font-size:0;background:#b9e9f7;list-style:none;padding:0;clear:both;line-height:41px;height:41px;
+.user-menu {font-size:0;background:#b9e9f7;list-style:none;padding:0;clear:both;line-height:41px;height:41px;margin-bottom:0;
 	li {display:inline-block;vertical-align:top;
 		a {display:block;font-size: 14px;color:#171717;padding:0 25px;}
 		
@@ -1860,7 +1866,20 @@ textarea{height:120px;resize:none;overflow:auto;}
 		.mCustomScrollBox .mCSB_scrollTools {right:5px;}
 	}
 	.col-center {overflow:hidden;padding:0 20px; box-sizing:border-box;
-		.bord {padding:20px 30px;}
+		.bord {padding:20px 0px;
+			h2 {
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+			.baron {
+				// box-sizing: border-box;
+				.baron__scroller {
+					max-width: 100%;
+					box-sizing: border-box;
+					padding: 0 30px;
+				}
+			}
+		}
 	}
 	h2 {font-family: $font_light;font-size:16px;    line-height: 1.5;     margin-bottom: 9px;}
 	h5 {    font-size: 11px;    margin: -8px 0 14px;
@@ -1913,7 +1932,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 	}
 }
 
-.user-menu-btns {display:table;list-style:none;margin:30px 0 39px;width:100%;max-width:660px;
+.user-menu-btns {display:table;list-style:none;margin:10px 0 39px;width:100%;max-width:660px;
 	.mCSB_container {
 		display: table;
 		@media (min-width: 1060px) {
@@ -2245,7 +2264,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 		h2 {    font-size: 15px;}
 		.col-left {display:none;}
 		.col-center {padding: 0 10px 0 0;
-			.bord {padding:13px 30px;}
+			.bord {padding:13px 0px;}
 		}
 		.col-right {
 			min-width: 260px;
@@ -3574,18 +3593,18 @@ textarea{height:120px;resize:none;overflow:auto;}
 	    	margin-right: 0;
 	    }
 
-		.horizontal_scroll {
+		.horizontall__clipper {
 		    .mCSB_scrollTools .mCSB_dragger {
 		    	height: 6px;
 		    	min-height: 6px;
 		    	display: none !important;
 		    }
-			&.mCustomScrollbar {
-			    position: relative;
-			    white-space: nowrap;
+			.horizontall__scroller {
 			    line-height: 55px;
 			    height: 55px;
 			    display: block;
+			    position: relative;
+			    z-index: 0;
 			    &:after {
 			    	content: '';
 			    	background: image-url('icons/arr9.png') no-repeat center center;
@@ -3708,11 +3727,11 @@ textarea{height:120px;resize:none;overflow:auto;}
 		}
 		.user-menu-btns {
 			line-height: 1 !important;
-			height: 61px !important;
+			height: 70px !important;
 			margin-top: 0px;
 			max-width: none;border-bottom:1px solid #dddddd;
 			width: initial;
-			margin-bottom: 30px;
+			padding-left: 18px;
 			.mCustomScrollBox {
 				height: 61px;
 			}
@@ -3736,7 +3755,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 					background-color: transparent;
 					border: none;
 					color: #000 !important;
-					padding: 23px 7px 1px;
+					padding: 23px 10px 1px 9px;
 					position: relative;
 					.item_number {
 						display: block;
@@ -3752,8 +3771,8 @@ textarea{height:120px;resize:none;overflow:auto;}
 					}
 				}
 			}
-			&.horizontal_scroll.mCustomScrollbar:after {
-				right: -20px;
+			&.horizontall__scroller:after {
+				// right: -20px;
 			}
 		}
 		.progn-block, .progn-block.gr {    padding: 23px 0px 17px;margin:0;border-width:0;background:#fff;
@@ -3772,7 +3791,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 			.td-num {    padding-right: 3px;text-align:left;}
 		}
 		.user-cols {
-			.col-center {padding:0;    margin-bottom: 43px;}
+			.col-center {padding:0;    margin-bottom: 10px;}
 			.col-right {float:none;width:auto;
 				.scroll {margin:0 0 30px;    height: 682px;}
 				.arch-link {   font-size: 16px;font-family: $font;   margin-left: 0;   margin-top: 10px;   margin-bottom: 30px; }
@@ -3808,7 +3827,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 					}
 				}
 				&.mobile {
-					margin-bottom: 50px;
+					margin-bottom: 10px;
 					.upds {
 						&>div {
 							&:last-child {
@@ -3831,6 +3850,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 			}
 			.table-nagrs {
 				display: block;
+				overflow: hidden;
 				tbody {
 					display: table;
 					width: 100%;
@@ -5052,16 +5072,16 @@ g.highcharts-axis path:nth-child(odd) {
 
 
 // Verticall scroll
-.user_track_record .baron__scroller {
-	max-height: 190px;
+.user_track_record {
+	height: 190px;
 }
 
-.narg-rows .baron__scroller, {
-	max-height: 584px;
+.narg-rows {
+	height: 584px;
 }
 
-.upds .baron__scroller {
-	max-height: 683px;
+.upds {
+	height: 683px;
 }
 
 // User's rate
@@ -5089,44 +5109,164 @@ g.highcharts-axis path:nth-child(odd) {
 	}
 }
 
+.current_user.current_user__bottom {
+	opacity: 0;
+	&.mobile {
+		display: none;
+	}
+	.nagr-img {
+		width: 52px;
+		height: 48px;
+	}
+}
+
+.current_user.current_user_position_top {
+	position: relative !important;
+}
+
 
 @media (max-width: 1060px) {
-	.user_track_record .baron__scroller {
-		max-height: 180px;
+	.user_track_record {
+		height: 180px;
 	}
-	.narg-rows .baron__scroller, {
-		max-height: 565px;
+	.narg-rows, {
+		height: 565px;
 	}
-	.upds .baron__scroller {
-		max-height: 668px;
+	.upds {
+		height: 668px;
 	}
 }
 
 @media (max-width: 960px) {
-	.user_track_record .baron__scroller {
-		max-height: 177px;
+	.user_track_record {
+		height: 177px;
 	}
 }
 
 @media (max-width: 767px) {
-	.user_track_record .baron__scroller {
-		max-height: 161px;
+	.user_track_record {
+		height: 161px;
 	}
 	.table-nagrs-row {
-		padding: 0 10px;
+		padding: 0 20px 0 10px;
 		.nagr-img img {
 			height: 40px;
 			width: 40px;
 		}
 	}
+	.table-nagrs .current_user {
+		position: static;
+	}
+	.current_user.current_user__top {
+		opacity: 1;
+		display: none;
+		top: 0px;
+		left: 0;
+		position: absolute;
+		font-size: 12px;
+		.nagr-img img {
+			border-radius: 50%;
+		}
+	}
+	.current_user.current_user__bottom {
+		opacity: 1;
+		display: none;
+		position: absolute;
+		bottom: -1px;
+		left: -2px; 
+		font-size: 12px;
+		padding-right: 10px;
+		width: 101%;
+		.nagr-img img {
+			border-radius: 50%;
+		}
+	}
+	.baron {
+		.baron__scroller {
+			width: calc(100% + 10px);
+			width: -moz-calc(100% + 10px);
+			width: -webkit-calc(100% + 10px);
+		}
+	}
+	.user-cols .col-center .bord .baron .baron__scroller {
+		width: calc(100% + 10px);
+		width: -moz-calc(100% + 10px);
+		width: -webkit-calc(100% + 10px);
+		max-width: initial;
+		padding-right: 40px;
+	}
 }
 
 @media (max-width: 639px) {
-	.narg-rows .baron__scroller, {
-		max-height: 250px;
+	.narg-rows {
+		height: 630px;
 	}
 	.table-nagrs-row {
 		padding: 0 17px;
+		overflow: hidden;
 	}
+	.upds {
+		height: auto;
+	}
+	.current_user_state_fixed {
+	    position: fixed;
+	    z-index: 1;
+	    background-color: #e8e8e8;
+	}
+	.current_user.current_user__top,.current_user.current_user__bottom {
+		font-size: 15px;
+	}
+	.user-menu-clipper.horizontall__clipper {
+		height: 55px;
+		margin-bottom: 18px;
+		border-bottom: 1px solid #ddd;
+		.horizontall__scroller {
+			height: 63px;
+		}
+	}
+	.user-menu-btns-clipper.horizontall__clipper {
+		height: 61px;
+		margin-bottom: 30px;
+		border-bottom: 1px solid #ffffff;
+		box-sizing: content-box;
+		&:after {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 20px;
+			z-index: 0;
+			background-color: #fff;
+		    background: url('') no-repeat center center;
+		}
+		.horizontall__scroller {
+			&:after {
+				z-index: 10;
+			}
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 18px;
+			right: 18px;
+			background-color: #ddd;
+			height: 1px;
+		}
+		.user-menu-btns {
+			&:before {
+				// content: '';
+				// position: absolute;
+				// right: 0;
+				// top: 0;
+				// height: 100%;
+				// width: 20px;
+				// z-index: 1;
+				// background-color: #fff;
+			}
+		}
+	}
+
 }
 
