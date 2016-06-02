@@ -716,10 +716,14 @@ background-image: linear-gradient(to right, #f8e330, #d3f438);}
 		.slide_img { min-width:102%;   height: 100%;    z-index: 0;    position: absolute;    left: 50%;    transform: translateX(-50%); -webkit-transform: translateX(-50%);display:block;max-width:1920px;}
 		.slide_cont {
 			position:absolute;
-			top:0;left:0;right:0; 
+			top:0;left:0; 
 			padding:4% 4.55%;
 			z-index:5;
 			text-shadow:1px 1px 1px #000;
+			cursor:pointer;
+			width:100%;
+			bottom:0;
+			right:0;
 			.logo_img {height:32px;line-height:0;margin:0 0 51px;}
 			.logo_img img {max-height:100%;}
 		}
@@ -1162,21 +1166,27 @@ textarea{height:120px;resize:none;overflow:auto;}
 		&:after {content:'';display: block;clear:both;}
 		.vote-sel {margin-bottom:2%; box-shadow: 0 1px 1px rgba(0,0,1,.4);
 			position:relative;overflow:hidden;float:left;width:49%;
-			i {display:block;position:relative;overflow:hidden;}
+			i {display:block;position:relative;overflow:hidden;border:8px solid #ffffff;border-bottom:0;box-sizing:border-box;}
 			i:before {content:'';display:block;padding-bottom:53%;}  
 			img {position:absolute;top:0;left: 0;height:100%;width:100%;}
-			.vote-sel-name {padding: 2px 10px 2px;display: block;height: 34px;}
+			.vote-sel-name {padding: 2px 10px 2px;display: block;height: 34px;background-color: #fff;}
 			.vote-sel-rezult,.vote-sel-rezult-no { position: absolute;right: 8px;top: 8px; display: none; font-size: 12px; line-height: 14px; padding: 2px 8px;min-height: 20px;}
 		}
 		.vote-sel:nth-child(even) {margin-left:2%;}
 		.yes {background: #f1ffc2;
-			span { background: #f1ffc2;}
+			span,.vote-sel-name { background: #f1ffc2;}
 			.vote-sell-name {background: #f1ffc2;}
 			.vote-sel-rezult {display: block;color:#88af4a;}
+			i {
+				border-color: #f1ffc2;
+			}
 		}
 		.no {background: #fae0d2;
-			span { background: #fae0d2;}
+			span,.vote-sel-name { background: #fae0d2;}
 			.vote-sel-rezult-no {display: block;color:#af5b4a;}
+			i {
+				border-color: #fae0d2;
+			}
 		}	
 	}
 	.view-sels {    margin: 0 18px 17px;
@@ -2248,10 +2258,10 @@ textarea{height:120px;resize:none;overflow:auto;}
 			.scroll {    height: 182px;    margin-bottom: -10px;}
 			.scroll {    height: 161px;    margin-bottom: -10px;}
 			.scroll.scroll-big {    max-height: 179px;}
-			h2 {    margin-bottom: 13px;    padding-left: 0;}
+			h2 {    margin-bottom: 13px;    padding-left: 17px;    padding-right: 17px;}
 			h5 {margin-top:0;}
 			.points {
-				padding-right: 0;
+				padding-right: 17px;
 			}
 		}
 		.user-ava-col {}
@@ -2319,11 +2329,18 @@ textarea{height:120px;resize:none;overflow:auto;}
 			}
 		 }
 		 .user-ach {
-    padding: 15px 17px 10px;
-    width: 31%;
+    padding: 15px 0px 10px;
+    width: 34%;
     .scroll {    height: 188px;    margin-bottom: 0px;}
-}
-.time-tabs {    width: 100%;    box-sizing: border-box;    margin-bottom: 16px;}
+	}
+	.time-tabs {    width: 100%;    box-sizing: border-box;    margin-bottom: 16px;    padding: 0 17px;    border: none;
+		li {
+			border: 1px solid #dedede;
+			&:nth-child(n+2) {
+				border-left: none;
+			}
+		}
+	}
 
 
 
@@ -2655,7 +2672,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 	.sec-progn .sidebar {    margin-top: 28px;
 		.share {    position: static;    margin-bottom: 11px;}
 	}
-	.user-block .time-tabs {width:100%;    box-sizing: border-box; margin-bottom: 14px;}
+	.user-block .time-tabs {width:100%;    box-sizing: border-box; margin-bottom: 14px;padding:0 10px;}
 	.narg-scroll .nagrs {
 		margin: 0 auto;    max-width: 398px;
 		.nagr {	    width:50%;}
@@ -2670,7 +2687,14 @@ textarea{height:120px;resize:none;overflow:auto;}
 				sup {    float: right;    margin-top: 5px;    font-size: 10px;}
 			}
 		}	
-		.user-ach {    padding: 10px 17px 10px;
+		.user-ach {    padding: 10px 0 10px;
+			h2 {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			.points {
+				padding-right: 10px;
+			}
 			.nagrs .nagr {width:50%;}
 			h5 {margin-top: 0px; margin-bottom: 5px;}
 			.scroll {    height: 188px;    margin-bottom: 0px;}
@@ -2746,7 +2770,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 				sup {    float: right;    margin-top: 5px;    font-size: 10px;}
 			}
 		}	
-		.user-ach {    padding: 10px 17px 10px;    width: 28%;
+		.user-ach {    padding: 10px 0 10px;    width: 32%;
 			.nagrs .nagr {width:50%;}
 			h5 {margin-top: 0px; margin-bottom: 5px;}
 			.scroll {    height: 188px;    margin-bottom: 0px;}
@@ -2923,7 +2947,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 				font-size: 10px;
 			}
 		}	
-		.user-ach {  padding: 10px 10px 10px;box-sizing: border-box;float:right;  width: 235px; //min-width: 240px;
+		.user-ach {  padding: 10px 0 10px;box-sizing: border-box;float:right;  width: 235px; //min-width: 240px;
 			.nagrs .nagr {width:50%;
 				.nagr-img i {
 					height: 44px;
@@ -3009,7 +3033,7 @@ textarea{height:120px;resize:none;overflow:auto;}
 				padding-top: 20px;
 			}
 		}	
-		.user-ach {  padding: 10px 10px 10px;box-sizing: border-box;float:right;  width: 220px; //min-width: 240px;
+		.user-ach {  padding: 10px 0 10px;box-sizing: border-box;float:right;  width: 220px; //min-width: 240px;
 			.nagrs .nagr {width:50%;
 				.nagr-img i {
 					height: 44px;
@@ -5091,7 +5115,7 @@ g.highcharts-axis path:nth-child(odd) {
 	padding: 0 20px;
 	box-sizing: border-box;
 	&:hover {
-		background-color: #e8e8e8;
+		// background-color: #e8e8e8;
 	}
 	&>* {
 		display: table-cell;
@@ -5106,6 +5130,9 @@ g.highcharts-axis path:nth-child(odd) {
 			width: 48%;
 		}
 
+	}
+	a {
+		color: #151515;
 	}
 }
 
@@ -5134,6 +5161,9 @@ g.highcharts-axis path:nth-child(odd) {
 	}
 	.upds {
 		height: 668px;
+	}
+	.baron._macosx .baron__bar {
+		width: 4px !important;
 	}
 }
 
@@ -5172,7 +5202,7 @@ g.highcharts-axis path:nth-child(odd) {
 		opacity: 1;
 		display: none;
 		position: absolute;
-		bottom: -1px;
+		bottom: 0;
 		left: -2px; 
 		font-size: 12px;
 		padding-right: 10px;
@@ -5194,6 +5224,17 @@ g.highcharts-axis path:nth-child(odd) {
 		width: -webkit-calc(100% + 10px);
 		max-width: initial;
 		padding-right: 40px;
+	}
+	#current_user__bottom {
+		&:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 4px;
+			bottom: -3px;
+			left: 0;
+			background-color: #fff;
+		}
 	}
 }
 

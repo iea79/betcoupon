@@ -32,7 +32,6 @@
     -webkit-transition: background-color .2s;
     transition: background-color .2s;
     cursor: pointer;
-    pointer-events: none;
 }
 .current_user_state_fixed {
     position: absolute;
@@ -138,6 +137,10 @@
     display: none;
 }
 
+.user_track_record .baron__bar {
+    min-height: 110px;
+}
+
 /* SIMPLE */
 .baron._simple .baron__track {
     opacity: 0;
@@ -190,7 +193,7 @@
         position: absolute;
         z-index: 1;
         width: 6px;
-        border-radius: 0px;
+        border-radius: 3px;
         background: #333;
         opacity: 0;
         transition: .1s opacity .4s linear;

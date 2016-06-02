@@ -274,72 +274,72 @@ $(document).ready(function(){
     });
 
 	//curstom scroll
-	$(".scroll").mCustomScrollbar({
-		axis:"y",
-		scrollButtons:{enable:false},
-		// advanced:{autoExpandHorizontalScroll:true},
-		scrollInertia: 200,
-        autoHideScrollbar: false,
-        autoDraggerLength: false,
-        contentTouchScroll: 150,
+	// $(".scroll").mCustomScrollbar({
+	// 	axis:"y",
+	// 	scrollButtons:{enable:false},
+	// 	// advanced:{autoExpandHorizontalScroll:true},
+	// 	scrollInertia: 200,
+ //        autoHideScrollbar: false,
+ //        autoDraggerLength: false,
+ //        contentTouchScroll: 150,
 
-        // onTotalScrollOffset:0, 
-        // alwaysTriggerOffsets:false,
+ //        // onTotalScrollOffset:0, 
+ //        // alwaysTriggerOffsets:false,
 
-        callbacks:{
-            whileScrolling:function(){
-                $(this).find('.mCSB_dragger').css('opacity', '1');
-                if($("#current_user_list").is(":mcsInView")){
-                    console.log("if mcsInView");
-                    $('#current_user_list').addClass("highlight-class");
-                }
-                 else {
-                    console.log("else mcsInView");
-                    $('#current_user_list').removeClass("highlight-class");
-                }
-            },
-            onScroll:function(){
-                var scrollBar = $(this).find('.mCSB_dragger');
-                setTimeout(function () {
-                    scrollBar.css('opacity', '0');
-                },1500);
-            },
-            onTotalScrollBack:function(){ 
-                console.log("scrolled to top");
-            }, 
-            onTotalScroll:function(){ 
-                console.log("scrolled to bottom");
-            }, 
-            onTotalScrollOffset: 150,
-            onTotalScrollBackOffset: 150, 
-            alwaysTriggerOffsets:false
+ //        callbacks:{
+ //            whileScrolling:function(){
+ //                $(this).find('.mCSB_dragger').css('opacity', '1');
+ //                if($("#current_user_list").is(":mcsInView")){
+ //                    console.log("if mcsInView");
+ //                    $('#current_user_list').addClass("highlight-class");
+ //                }
+ //                 else {
+ //                    console.log("else mcsInView");
+ //                    $('#current_user_list').removeClass("highlight-class");
+ //                }
+ //            },
+ //            onScroll:function(){
+ //                var scrollBar = $(this).find('.mCSB_dragger');
+ //                setTimeout(function () {
+ //                    scrollBar.css('opacity', '0');
+ //                },1500);
+ //            },
+ //            onTotalScrollBack:function(){ 
+ //                console.log("scrolled to top");
+ //            }, 
+ //            onTotalScroll:function(){ 
+ //                console.log("scrolled to bottom");
+ //            }, 
+ //            onTotalScrollOffset: 150,
+ //            onTotalScrollBackOffset: 150, 
+ //            alwaysTriggerOffsets:false
 
-        },
-    });
+ //        },
+ //    });
 
-    //curstom horizontal scroll
-    $(".horizontal_scroll").mCustomScrollbar({
-        axis:"x",
-        // scrollButtons:{enable:false},
-        advanced:{autoExpandHorizontalScroll:true},
-        scrollInertia: 600,
-        autoHideScrollbar: true,
-        mouseWheel:{ enable: false },
-        callbacks:{
-            onScrollStart:function(){
-                $(this).addClass('hide_arrow');
-            }
-        }
-    });
+ //    //curstom horizontal scroll
+ //    $(".horizontal_scroll").mCustomScrollbar({
+ //        axis:"x",
+ //        // scrollButtons:{enable:false},
+ //        advanced:{autoExpandHorizontalScroll:true},
+ //        scrollInertia: 600,
+ //        autoHideScrollbar: true,
+ //        mouseWheel:{ enable: false },
+ //        callbacks:{
+ //            onScrollStart:function(){
+ //                $(this).addClass('hide_arrow');
+ //            }
+ //        }
+ //    });
 
-    $(".scroll,.horizontal_scroll").mouseenter(function() {
-        var scrollBar = $(this).find('.mCSB_dragger');
+ //    $(".scroll,.horizontal_scroll").mouseenter(function() {
+ //        var scrollBar = $(this).find('.mCSB_dragger');
 
-        scrollBar.css('opacity', '1');
-        setTimeout(function () {
-            scrollBar.css('opacity', '0');
-        },1000);
-    });
+ //        scrollBar.css('opacity', '1');
+ //        setTimeout(function () {
+ //            scrollBar.css('opacity', '0');
+ //        },1000);
+ //    });
 
 	//news tabs
 	$('ul.tabs li:first-child').addClass('active');
@@ -861,6 +861,8 @@ $(window).load(function(){
 	
     grayscale( $('.slider-partn img') );
 
+    // BARON HORIZONTALL
+
     // baron({
     //     root: '.horizontall__clipper',
     //     scroller: '.horizontall__scroller',
@@ -891,9 +893,9 @@ $(window).load(function(){
         clickable: true
     }).controls({
         // Element to be used as interactive track. Note: it could be different from 'track' param of baron.
-        // track: '.baron__track',
-        // forward: '.baron__down',
-        // backward: '.baron__up'
+        track: '.baron__track',
+        forward: '.baron__down',
+        backward: '.baron__up'
     });
 
     $(".baron").mouseenter(function() {
@@ -931,6 +933,7 @@ $(window).load(function(){
             $(bottomEl).hide();
         }
     }
+
 
 });
 
