@@ -713,7 +713,7 @@ background-image: linear-gradient(to right, #f8e330, #d3f438);}
 		position:relative; 
 		color:$linkWhite;
 		background:#333;
-		.slide_img { min-width:102%;   height: 100%;    z-index: 0;    position: absolute;    left: 50%;    transform: translateX(-50%); -webkit-transform: translateX(-50%);display:block;max-width:1920px;}
+		.slide_img { min-width:102%;    z-index: 0;    position: absolute;    left: 50%;    transform: translateX(-50%); -webkit-transform: translateX(-50%);display:block;max-width:1920px; min-height:100%;}
 		.slide_cont {
 			position:absolute;
 			top:0;left:0; 
@@ -721,7 +721,6 @@ background-image: linear-gradient(to right, #f8e330, #d3f438);}
 			z-index:5;
 			text-shadow:1px 1px 1px #000;
 			cursor:pointer;
-			width:100%;
 			bottom:0;
 			right:0;
 			.logo_img {height:32px;line-height:0;margin:0 0 51px;}
@@ -751,7 +750,7 @@ background-image: linear-gradient(to right, #f8e330, #d3f438);}
 			p,span,i,b {color:$linkWhite;font-size:14px;}
 			b,i {font-size:45px;margin: 1px 0 0;}
 		}
-		.btn {    float: left;    margin: 23px 0 0 5px;
+		.btn {    float: left;    margin: 23px 0 0 5px;    text-shadow: none;
 			&.btn_disable {
 				opacity: 0.9;
 				cursor: default;
