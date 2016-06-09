@@ -131,22 +131,35 @@ $(document).ready(function(){
 	$('.top-slider').slick({ 
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
-	  dots: true,
 	  arrows: false,
 		fade: true,
-		 asNavFor: '.top-thumbs'
+    autoplay: true,
+    autoplaySpeed: 6000,
+    asNavFor: '.top-thumbs',
 	});
 
 	$('.top-thumbs').slick({ 
 	  slidesToShow: 4,
 	  slidesToScroll: 1,
-	  dots: false,
+	  dots: true,
 	  arrows: false,
 		fade: false,
 		vertical: true,
+    pauseOnFocus: true,
 		asNavFor: '.top-slider',
 		focusOnSelect: true
 	});
+
+  $('.top-thumbs_item').on('click', function() {
+    $('.top-slider').slick('slickPause');
+  });
+
+  $('.top-slider').on('beforeChange', function(event, slick,  currentSlide, nextSlide){
+    console.log(currentSlide+ ', ' +nextSlide);
+
+    $('.top-thumbs').slick('slickNext');
+
+  });
 
     //
     $('.post-slider').slick({ 
