@@ -286,73 +286,6 @@ $(document).ready(function(){
        ] 
     });
 
-	//curstom scroll
-	// $(".scroll").mCustomScrollbar({
-	// 	axis:"y",
-	// 	scrollButtons:{enable:false},
-	// 	// advanced:{autoExpandHorizontalScroll:true},
-	// 	scrollInertia: 200,
- //        autoHideScrollbar: false,
- //        autoDraggerLength: false,
- //        contentTouchScroll: 150,
-
- //        // onTotalScrollOffset:0, 
- //        // alwaysTriggerOffsets:false,
-
- //        callbacks:{
- //            whileScrolling:function(){
- //                $(this).find('.mCSB_dragger').css('opacity', '1');
- //                if($("#current_user_list").is(":mcsInView")){
- //                    console.log("if mcsInView");
- //                    $('#current_user_list').addClass("highlight-class");
- //                }
- //                 else {
- //                    console.log("else mcsInView");
- //                    $('#current_user_list').removeClass("highlight-class");
- //                }
- //            },
- //            onScroll:function(){
- //                var scrollBar = $(this).find('.mCSB_dragger');
- //                setTimeout(function () {
- //                    scrollBar.css('opacity', '0');
- //                },1500);
- //            },
- //            onTotalScrollBack:function(){ 
- //                console.log("scrolled to top");
- //            }, 
- //            onTotalScroll:function(){ 
- //                console.log("scrolled to bottom");
- //            }, 
- //            onTotalScrollOffset: 150,
- //            onTotalScrollBackOffset: 150, 
- //            alwaysTriggerOffsets:false
-
- //        },
- //    });
-
- //    //curstom horizontal scroll
- //    $(".horizontal_scroll").mCustomScrollbar({
- //        axis:"x",
- //        // scrollButtons:{enable:false},
- //        advanced:{autoExpandHorizontalScroll:true},
- //        scrollInertia: 600,
- //        autoHideScrollbar: true,
- //        mouseWheel:{ enable: false },
- //        callbacks:{
- //            onScrollStart:function(){
- //                $(this).addClass('hide_arrow');
- //            }
- //        }
- //    });
-
- //    $(".scroll,.horizontal_scroll").mouseenter(function() {
- //        var scrollBar = $(this).find('.mCSB_dragger');
-
- //        scrollBar.css('opacity', '1');
- //        setTimeout(function () {
- //            scrollBar.css('opacity', '0');
- //        },1000);
- //    });
 
 	//news tabs
 	$('ul.tabs li:first-child').addClass('active');
@@ -948,6 +881,32 @@ $(window).load(function(){
     }
 
 
+    "use strict";
+    $(function() {
+        $(".youtube").each(function() {
+            // Зная идентификатор видео на YouTube, легко можно найти его миниатюру
+            $(this).css('background-image', 'url(http://i.ytimg.com/vi/' + this.id + '/sddefault.jpg)');
+
+            // Добавляем иконку Play поверх миниатюры, чтобы было похоже на видеоплеер
+            $(this).append($('<div/>', {'class': 'news-video-play'}));
+
+            $(document).delegate('#'+this.id, 'click', function() {
+                // создаем iframe со включенной опцией autoplay
+                var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1";
+                if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
+
+                // Высота и ширина iframe должны быть такими же, как и у родительского блока
+                var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() })
+
+                // Заменяем миниатюру HTML5 плеером с YouTube
+                $(this).replaceWith(iframe);
+            });
+        });
+     });
+
+
 });
 
 window.scrollBy(0, 1);
+
+
