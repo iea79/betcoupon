@@ -4743,11 +4743,33 @@ textarea.error {border-color:#ff0000;}
 }
 
 /* */
+.user-cols2 .col-center .bord.mess-bord {
+	padding-left: 0;
+	padding-right: 0;
+}
+.mess-bord {
+	.mess-title,.h5-bord {
+		margin-left: 19px;
+		margin-right: 19px;
+	}
+	.h5-bord {
+
+	}
+}
 .u-list {
+	height: 675px;
+	.baron {
+
+	}
+	.baron__scroller {
+		padding: 0 !important;
+	}
 	.u-row {
 		overflow:hidden;
-		padding:18px 0 14px; 
+		padding:16px 0px 13px; 
 		border-bottom:1px solid #e0e0e0;
+		margin-left: 19px;
+		margin-right: 19px;
 		.ava {
 			float:left;
 			overflow:hidden;
@@ -8983,10 +9005,10 @@ textarea.error {border-color:#ff0000;}
 		}
 		&.answerH3__ask {
 			margin-top: 11px;
-			margin-bottom: 20px;
 			color: #444;
 			font-size: 24px;
 			font-weight: 300;
+			padding-bottom: 20px;
 		}
 	}
 	.searchBox {
@@ -9207,14 +9229,14 @@ textarea.error {border-color:#ff0000;}
 			font-size: 14px;
 			font-weight: 300;
 			font-family: inherit;
-			padding: 4px 0;
+			padding: 4px 10px;
 			background: white;
 			border: 1px solid #c6c6c6;
 			color: #3f3f3f;
 			min-width: 137px;
 			&:hover, &:active, &.active {
 				background-color: #1095ce;
-				border-width: 0;
+				border-color: #1095ce;
 				color: white;
 				margin-right: 5px;
 			}

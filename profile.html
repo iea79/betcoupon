@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/font/font.css" />	
 	<link rel="stylesheet" type="text/css" href="scss/scss_style.css" />	
 	<link rel="stylesheet" type="text/css" href="css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="css/baron.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.formstyler.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" />
@@ -121,26 +122,18 @@
 		<div id="content">			
 			<section class="section-user">
 				<div class="cont-in">							
-					<ul class="user-menu horizontal_scroll">
-						<li class="active"><a href="#">Профиль</a></li>
-						<li><a href="#">Оповещения</a></li>
-						<li><a href="#">Достижения</a></li>
-						<li><a href="#">Призы</a></li>
-						<li><a href="#">Избранное</a></li>
-					</ul>
+					<div class="user-menu-clipper horizontall__clipper">
+						<ul class="user-menu horizontall__scroller">
+							<li class="active"><a href="#">Профиль</a></li>
+							<li><a href="#">Оповещения</a></li>
+							<li><a href="#">Достижения</a></li>
+							<li><a href="#">Призы</a></li>
+							<li><a href="#">Избранное</a></li>
+						</ul>
+					</div>							
 					<div class="user-block">								
-						<div class="user-ava"><img src="images/img69.jpg" alt=""/></div>					
-						<div class="user-short">
-							<h1>Федор Галицын<sup class="green">В сети</sup></h1>
-							<div class="user-place desktop">Москва, Россия</div>
-							<div class="stat"><img src="images/icons/star2.png" alt=""/> Знаток</div>
-							<div class="user-place mobile">Москва, Россия</div>
-							<div class="user-pos">8 место в рейтинге</div>
-							<div class="point-line">
-								<div><span style="width:70%;">2.189 баллов</span></div>
-								<b>3</b>
-							</div>
-							<a href="#" class="more-inf-link">Показать подробную информацию</a>
+						<div class="user-ava-col">
+							<div class="user-ava"><img src="images/img69.jpg" alt=""/></div>
 						</div>					
 						<div class="user-ach mob-hid">
 							<div class="points">900 баллов</div>
@@ -151,53 +144,135 @@
 									<li><a href="#">За неделю</a></li>
 									<li><a href="#">За месяц</a></li>
 								</ul>	
-								<div class="scroll">
-									<h5>Награды</h5>
-									<div class="nagrs">
-										<div class="nagr">
-											<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-											<div class="stat">Исследователь</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-											<div class="stat">Активист</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-											<div class="stat">Исследователь</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-											<div class="stat">Активист</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-											<div class="stat">Исследователь</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-											<div class="stat">Активист</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i></i></div>
-											<div class="stat">&nbsp;</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i></i></div>
-											<div class="stat">&nbsp;</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i></i></div>
-											<div class="stat">&nbsp;</div>
-										</div>
-									</div>	
+								<div class="user_track_record baron _macosx">
+								    <div class="baron__scroller">
+										<h5>Награды</h5>
+										<div class="nagrs">
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Исследователь</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Активист</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Исследователь</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Активист</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Исследователь</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Активист</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i></i></div>
+												<div class="stat">&nbsp;</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i></i></div>
+												<div class="stat">&nbsp;</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i></i></div>
+												<div class="stat">&nbsp;</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i></i></div>
+												<div class="stat">&nbsp;</div>
+											</div>
+										</div>	
+								    </div>
+
+								    <div class="baron__track">
+								        <div class="baron__free">
+								            <div class="baron__bar"></div>
+								        </div>
+								    </div>
 								</div>
 							</div>	
 						</div>
+						<div class="user-short">
+							<h1>Федор Галицын<sup class="green">В сети</sup></h1>
+							<div class="user-place desktop">Москва, Россия</div>
+							<div class="stat"><img src="images/icons/star2.png" alt=""/> Знаток</div>
+							<div class="user-place mobile">Москва, Россия</div>
+							<div class="user-pos">8 место в рейтинге</div>
+							<div class="point-line">
+								<div><span class="user_rate_inline" style="width:70%;">2.189 баллов</span></div>
+								<b class="user_rate_level">3</b>
+							</div>
+							<a href="#" class="more-inf-link">Показать подробную информацию</a>
+						</div>					
+						<div class="user-ach mob-show mob-show2">
+							<h2>Последние достижения</h2>							
+							<div class="nagr-rows scroll scroll-big">
+								<div class="nagr">
+									<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+									<div class="nagr-cont">
+										<div class="stat">Награда Игрок</div>
+										<div class="points">5800 баллов</div>
+									</div>	
+								</div>
+								<div class="nagr">
+									<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+									<div class="nagr-cont">
+										<div class="stat">Награда Игрок</div>
+										<div class="points">5800 баллов</div>
+									</div>
+								</div>
+								<div class="nagr">
+									<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+									<div class="nagr-cont">
+										<div class="stat">Награда Игрок</div>
+										<div class="points">5800 баллов</div>
+									</div>
+								</div>
+								<div class="nagr">
+									<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+									<div class="nagr-cont">
+										<div class="stat">Награда Игрок</div>
+										<div class="points">5800 баллов</div>
+									</div>	
+								</div>
+								<div class="nagr">
+									<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+									<div class="nagr-cont">
+										<div class="stat">Награда Игрок</div>
+										<div class="points">5800 баллов</div>
+									</div>
+								</div>
+								<div class="nagr">
+									<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+									<div class="nagr-cont">
+										<div class="stat">Награда Игрок</div>
+										<div class="points">5800 баллов</div>
+									</div>
+								</div>	
+							</div>	
+						</div>				
+					</div>	
+					
+					<!-- Mobile user menu -->
+					<div class="user-menu-btns-clipper horizontall__clipper mobile">
+						<ul class="user-menu-btns horizontall__scroller">
+							<li class="active"><a href="#">Лента <span class="item_number"></span></a></li>
+							<li><a href="#">Друзья <span class="item_number">213</span></a></li>
+							<li><a href="#">Подписчики <span class="item_number">230</span></a></li>
+							<li><a href="#">Прогнозы <span class="item_number"></span></a></li>
+							<li><a href="#">Обсуждения <span class="item_number"></span></a></li>
+						</ul>
 					</div>
 
 					<div class="user-cont nobord">
-						<ul class="user-menu-btns horizontal_scroll">
+						<ul class="user-menu-btns desktop">
 							<li class="active"><a href="#">Лента</a></li>
 							<li><a href="#">Друзья</a></li>
 							<li><a href="#">Подписчики <span class="item_number">125</span></a></li>
@@ -358,7 +433,7 @@
 							</div>
 							<!-- End mobile -->
 							<div class="col-right">
-								<div class="bord">
+								<div class="bord narg-bord">
 									<h2>Рейтинг пользователей</h2>
 									<div class="tabs-block">
 										<ul class="time-tabs">
@@ -366,57 +441,81 @@
 											<li><a href="#">За неделю</a></li>
 											<li><a href="#">За месяц</a></li>
 										</ul>	
-										<div class="narg-rows scroll">
-										<table class="table-nagrs">
-											<tr>
-												<td>1</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>2</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>3</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>4</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>5</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>6</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>7</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>8</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>9</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>10</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>11</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>12</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>13</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>14</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>15</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-											<tr>
-												<td>16</td><td class="nagr-img"><img src="images/ic6.jpg" alt=""/></td><td>Георгий Вонг</td><td class="td-num">100800</td>
-											</tr>
-										</table>
+										<div class="narg-rows baron _macosx">
+											<div class="table-nagrs baron__scroller">
+												<div class="table-nagrs-row">
+													<div>1</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>2</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>3</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>4</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>5</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>6</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>7</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>8</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>9</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>10</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>11</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>12</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>13</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<!-- Текущий пользователь -->
+												<div>
+													<div id="current_user" class="current_user table-nagrs-row">
+														<div>14</div><div class="nagr-img"><a href="#"><img src="images/img69.jpg" alt=""/></a></div><div><a href="#">Федор Галицын</a></div><div class="td-num">100800</div>
+													</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>15</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>16</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>17</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>18</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+												<div class="table-nagrs-row">
+													<div>19</div><div class="nagr-img"><a href="#"><img src="images/ic6.jpg" alt=""/></a></div><div><a href="#">Георгий Вонг</a></div><div class="td-num">100800</div>
+												</div>
+											</div>
+
+										    <div class="baron__track">
+										        <div class="baron__free">
+										            <div class="baron__bar"></div>
+										        </div>
+										    </div>
+
+											<!-- begin Current user bottom for mobile -->
+											<div id="current_user__bottom" class="current_user current_user__bottom table-nagrs-row mobile">
+												<div>14</div><div class="nagr-img"><a href="#"><img src="images/img69.jpg" alt=""/></a></div><div><a href="#">Федор Галицын</a></div><div class="td-num">100800</div>
+											</div>
+											<!-- end Current user bottom for mobile -->
 										</div>
 										<a href="#" class="arch-link">Посмотреть архив</a>
 									</div>	
@@ -425,105 +524,115 @@
 							<div class="col-center">
 								<div class="bord">
 									<h2>Лента событий</h2>
-									<div class="upds scroll">
-										<div class="upd">
-											<div class="ava"><a href="#"><img src="images/ic1.png" alt=""/></a></div>
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Денис Максимов</a></div>
-												<div class="upd-txt">Получил нову награду 500 баллов</div>
+									<div class="upds baron _macosx">
+										<div class="baron__scroller">
+											<div class="upd">
+												<div class="ava"><a href="#"><img src="images/ic1.png" alt=""/></a></div>
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Денис Максимов</a></div>
+													<div class="upd-txt">Получил нову награду 500 баллов</div>
+												</div>	
+											</div>
+											<div class="upd">
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
+													<div class="upd-txt">Сборная России добывает путевку на европейский чемпионат. <br/>Последний соперник нашей команды в отборочном цикле не доставил дружине Слуцкого больших проблем </div>
+												</div>	
+											</div>
+											<div class="upd">
+												<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Денис Максимов</a></div>
+													<div class="upd-txt">Получил нову награду 500 баллов</div>
+												</div>	
+											</div>
+											<div class="upd">
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
+													<div class="upd-txt">Заставить ее играть в атакующий футбол и выиграть 4 матча из 4 под его руководством.</div>
+												</div>	
 											</div>	
+											<div class="upd">
+												<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Денис Максимов</a></div>
+													<div class="upd-txt">Получил нову награду 500 баллов</div>
+												</div>	
+											</div>
+											<div class="upd">
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
+													<div class="upd-txt">Заставить ее играть в атакующий футбол и выиграть 4 матча из 4 под его руководством.</div>
+												</div>	
+											</div>	
+											<div class="upd">
+												<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Денис Максимов</a></div>
+													<div class="upd-txt">Получил нову награду 500 баллов</div>
+												</div>	
+											</div>
+											<div class="upd">
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
+													<div class="upd-txt">Сборная России добывает путевку на европейский чемпионат. <br/>Последний соперник нашей команды в отборочном цикле не доставил дружине Слуцкого больших проблем </div>
+												</div>	
+											</div>
+											<div class="upd">
+												<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Денис Максимов</a></div>
+													<div class="upd-txt">Получил нову награду 500 баллов</div>
+												</div>	
+											</div>
+											<div class="upd">
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
+													<div class="upd-txt">Заставить ее играть в атакующий футбол и выиграть 4 матча из 4 под его руководством.</div>
+												</div>	
+											</div>	
+											<div class="upd">
+												<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Денис Максимов</a></div>
+													<div class="upd-txt">Получил нову награду 500 баллов</div>
+												</div>	
+											</div>
+											<div class="upd">
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
+													<div class="upd-txt">Заставить ее играть в атакующий футбол и выиграть 4 матча из 4 под его руководством.</div>
+												</div>	
+											</div>	
+											<div class="upd">
+												<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
+												<div class="upd-cont">
+													<div class="upd-date">Час назад</div>
+													<div class="upd-name"><a href="#">Денис Максимов</a></div>
+													<div class="upd-txt">Получил нову награду 500 баллов</div>
+												</div>	
+											</div>
+
 										</div>
-										<div class="upd">
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
-												<div class="upd-txt">Сборная России добывает путевку на европейский чемпионат. <br/>Последний соперник нашей команды в отборочном цикле не доставил дружине Слуцкого больших проблем </div>
-											</div>	
-										</div>
-										<div class="upd">
-											<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Денис Максимов</a></div>
-												<div class="upd-txt">Получил нову награду 500 баллов</div>
-											</div>	
-										</div>
-										<div class="upd">
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
-												<div class="upd-txt">Заставить ее играть в атакующий футбол и выиграть 4 матча из 4 под его руководством.</div>
-											</div>	
-										</div>	
-										<div class="upd">
-											<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Денис Максимов</a></div>
-												<div class="upd-txt">Получил нову награду 500 баллов</div>
-											</div>	
-										</div>
-										<div class="upd">
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
-												<div class="upd-txt">Заставить ее играть в атакующий футбол и выиграть 4 матча из 4 под его руководством.</div>
-											</div>	
-										</div>	
-										<div class="upd">
-											<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Денис Максимов</a></div>
-												<div class="upd-txt">Получил нову награду 500 баллов</div>
-											</div>	
-										</div>
-										<div class="upd">
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
-												<div class="upd-txt">Сборная России добывает путевку на европейский чемпионат. <br/>Последний соперник нашей команды в отборочном цикле не доставил дружине Слуцкого больших проблем </div>
-											</div>	
-										</div>
-										<div class="upd">
-											<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Денис Максимов</a></div>
-												<div class="upd-txt">Получил нову награду 500 баллов</div>
-											</div>	
-										</div>
-										<div class="upd">
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
-												<div class="upd-txt">Заставить ее играть в атакующий футбол и выиграть 4 матча из 4 под его руководством.</div>
-											</div>	
-										</div>	
-										<div class="upd">
-											<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Денис Максимов</a></div>
-												<div class="upd-txt">Получил нову награду 500 баллов</div>
-											</div>	
-										</div>
-										<div class="upd">
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Ежедневные футбольные новости</a></div>
-												<div class="upd-txt">Заставить ее играть в атакующий футбол и выиграть 4 матча из 4 под его руководством.</div>
-											</div>	
-										</div>	
-										<div class="upd">
-											<div class="ava"><a href="#"><img src="images/ic2.jpg" alt=""/></a></div>
-											<div class="upd-cont">
-												<div class="upd-date">Час назад</div>
-												<div class="upd-name"><a href="#">Денис Максимов</a></div>
-												<div class="upd-txt">Получил нову награду 500 баллов</div>
-											</div>	
-										</div>
+
+									    <div class="baron__track">
+									        <div class="baron__free">
+									            <div class="baron__bar"></div>
+									        </div>
+									    </div>
+
 									</div>	
 								</div>	
 							</div>	

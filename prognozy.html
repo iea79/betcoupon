@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/font/font.css" />	
 	<link rel="stylesheet" type="text/css" href="scss/scss_style.css" />	
 	<link rel="stylesheet" type="text/css" href="css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="css/baron.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.formstyler.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" />
 	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" />
@@ -121,26 +122,18 @@
 		<div id="content">			
 			<section class="section-user">
 				<div class="cont-in">							
-					<ul class="user-menu horizontal_scroll">
-						<li><a href="#">Профиль</a></li>
-						<li><a href="#">Оповещения</a></li>
-						<li class="active"><a href="#">Достижения</a></li>
-						<li><a href="#">Призы</a></li>
-						<li><a href="#">Избранное</a></li>
-					</ul>
+					<div class="user-menu-clipper horizontall__clipper">
+						<ul class="user-menu horizontall__scroller">
+							<li><a href="#">Профиль</a></li>
+							<li><a href="#">Оповещения</a></li>
+							<li class="active"><a href="#">Достижения</a></li>
+							<li><a href="#">Призы</a></li>
+							<li><a href="#">Избранное</a></li>
+						</ul>
+					</div>							
 					<div class="user-block">								
-						<div class="user-ava"><img src="images/img69.jpg" alt=""/></div>					
-						<div class="user-short">
-							<h1>Федор Галицын<sup class="green">В сети</sup></h1>
-							<div class="user-place mob-hid">Москва, Россия</div>
-							<div class="stat"><img src="images/icons/star1.png" alt=""/> Знаток</div>
-							<div class="user-place mob-show">Москва, Россия</div>
-							<div class="user-pos">8 место в рейтинге</div>
-							<div class="point-line">
-								<div><span style="width:70%;">2.189 баллов</span></div>
-								<b>3</b>
-							</div>
-							<a href="#" class="more-inf-link">Показать подробную информацию</a>
+						<div class="user-ava-col">
+							<div class="user-ava"><img src="images/img69.jpg" alt=""/></div>
 						</div>					
 						<div class="user-ach mob-hid">
 							<div class="points">900 баллов</div>
@@ -151,52 +144,76 @@
 									<li><a href="#">За неделю</a></li>
 									<li><a href="#">За месяц</a></li>
 								</ul>	
-								<div class="scroll">
-									<h5>Награды</h5>
-									<div class="nagrs">
-										<div class="nagr">
-											<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-											<div class="stat">Исследователь</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-											<div class="stat">Активист</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i></i></div>
-											<div class="stat">&nbsp;</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i></i></div>
-											<div class="stat">&nbsp;</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i></i></div>
-											<div class="stat">&nbsp;</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i></i></div>
-											<div class="stat">&nbsp;</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i></i></div>
-											<div class="stat">&nbsp;</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i></i></div>
-											<div class="stat">&nbsp;</div>
-										</div>
-										<div class="nagr">
-											<div class="nagr-img"><i></i></div>
-											<div class="stat">&nbsp;</div>
-										</div>
-									</div>	
+								<div class="user_track_record baron _macosx">
+								    <div class="baron__scroller">
+										<h5>Награды</h5>
+										<div class="nagrs">
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Исследователь</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Активист</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Исследователь</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Активист</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Исследователь</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
+												<div class="stat">Активист</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i></i></div>
+												<div class="stat">&nbsp;</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i></i></div>
+												<div class="stat">&nbsp;</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i></i></div>
+												<div class="stat">&nbsp;</div>
+											</div>
+											<div class="nagr">
+												<div class="nagr-img"><i></i></div>
+												<div class="stat">&nbsp;</div>
+											</div>
+										</div>	
+								    </div>
+
+								    <div class="baron__track">
+								        <div class="baron__free">
+								            <div class="baron__bar"></div>
+								        </div>
+								    </div>
 								</div>
 							</div>	
 						</div>
+						<div class="user-short">
+							<h1>Федор Галицын<sup class="green">В сети</sup></h1>
+							<div class="user-place desktop">Москва, Россия</div>
+							<div class="stat"><img src="images/icons/star2.png" alt=""/> Знаток</div>
+							<div class="user-place mobile">Москва, Россия</div>
+							<div class="user-pos">8 место в рейтинге</div>
+							<div class="point-line">
+								<div><span class="user_rate_inline" style="width:70%;">2.189 баллов</span></div>
+								<b class="user_rate_level">3</b>
+							</div>
+							<a href="#" class="more-inf-link">Показать подробную информацию</a>
+						</div>					
 						<div class="user-ach mob-show mob-show2">
 							<h2>Последние достижения</h2>							
-							<div class="nagr-rows scroll">
+							<div class="nagr-rows scroll scroll-big">
 								<div class="nagr">
 									<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
 									<div class="nagr-cont">
@@ -240,46 +257,9 @@
 									</div>
 								</div>	
 							</div>	
-						</div>		
-						<div class="user-ach mob-show">
-							<div class="points">900 баллов</div>
-							<h2>Достижения</h2>
-							<div class="tabs-block">
-								<ul class="time-tabs">
-									<li><a href="#" class="active">Сегодня</a></li>
-									<li><a href="#">За неделю</a></li>
-									<li><a href="#">За месяц</a></li>
-								</ul>	
-							<div class="nagrs">
-								<div class="nagr">
-									<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-									<div class="nagr-cont">
-										<div class="stat">Награда "Игрок"</div>
-										<p>За выполнение всех миссий дня</p>
-										<div class="points">5800 баллов</div>
-									</div>	
-								</div>
-								<div class="nagr">
-									<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-									<div class="nagr-cont">
-										<div class="stat">Награда "Игрок"</div>
-										<p>За выполнение всех миссий дня</p>
-										<div class="points">5800 баллов</div>
-									</div>
-								</div>
-								<div class="nagr">
-									<div class="nagr-img"><i><img src="images/img68.jpg" alt=""/></i></div>
-									<div class="nagr-cont">
-										<div class="stat">Награда "Игрок"</div>
-										<p>За выполнение всех миссий дня</p>
-										<div class="points">5800 баллов</div>
-									</div>
-								</div>
-							</div>	
-							</div>
-							<a href="#" class="more-link">Все достижения</a>	
-						</div>					
+						</div>				
 					</div>	
+
 					<div class="user-cont">
 						<ul class="user-menu">
 							<li><a href="#">Рейтинг</a></li>
@@ -291,9 +271,9 @@
 								<h2>Статистика прогнозов в Июле 2015 года</h2>
 								<div class="col-sm">
 									<p>На графике вы можете 
-отслеживать результаты 
-ваших прогнозов 
-в течении месяца.</p>
+									отслеживать результаты 
+									ваших прогнозов 
+									в течении месяца.</p>
 								</div>
 								<div class="col-big chart_wrapp">
 									<div id="chart_x_single" style="min-width: 310px; height: 320px; margin: 0 auto"></div>
@@ -306,13 +286,13 @@
 								<h2>Рейтинг прогнозистов</h2>
 								<div class="col-sm">
 									<p>Окажитесь в топ-10 
-рейтинга в конце месяца, 
-чтобы получить призы. </p>
-<p>Важно: в зачет при 
-составлении рейтинга 
-идут только те баллы 
-которые были получены 
-в течении этого месяца.</p>
+									рейтинга в конце месяца, 
+									чтобы получить призы. </p>
+									<p>Важно: в зачет при 
+									составлении рейтинга 
+									идут только те баллы 
+									которые были получены 
+									в течении этого месяца.</p>
 								</div>
 								<div class="col-big">
 									<div class="table-date">Июль 2015 года</div>
