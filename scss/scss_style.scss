@@ -2041,9 +2041,9 @@ textarea.error {border-color:#ff0000;}
 		.box {width:25%;}
 	}	
 }*/
-
+.boxes + .boxes-top,
 .view-more + .boxes-top {
-	margin-top:53px;
+	margin-top:54px;
 	h3 {float:none;}
 }
 
@@ -3026,7 +3026,13 @@ textarea.error {border-color:#ff0000;}
 		position:relative;    
 		margin: 27px 0 19px;    
 		padding-bottom: 27px;
-		.post-slider-img {line-height:0;}
+		.post-slider-img {
+			line-height:0;
+			img {
+				// position: absolute;
+				width: 100%;
+			}
+		}
 		.post-slider-caption {    
 			padding: 12px 0 10px;    
 			letter-spacing: 0;
