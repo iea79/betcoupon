@@ -155,8 +155,7 @@ $(document).ready(function(){
   });
 
   $('.top-slider').on('beforeChange', function(event, slick,  currentSlide, nextSlide){
-    console.log(currentSlide+ ', ' +nextSlide);
-
+    // console.log(currentSlide+ ', ' +nextSlide);
     $('.top-thumbs').slick('slickNext');
 
   });
@@ -337,7 +336,7 @@ $(document).ready(function(){
     $('.conc-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        infinite: true,
+        infinite: false,
         arrows: true,
         fade: false,
         pauseOnHover: true,
@@ -885,28 +884,137 @@ $(window).load(function(){
     $(function() {
         $(".youtube").each(function() {
             // Зная идентификатор видео на YouTube, легко можно найти его миниатюру
-            $(this).css('background-image', 'url(http://i.ytimg.com/vi/' + this.id + '/sddefault.jpg)');
+            $(this).find('img').attr('src', 'http://img.youtube.com/vi/' + this.id + '/maxresdefault.jpg');
 
             // Добавляем иконку Play поверх миниатюры, чтобы было похоже на видеоплеер
             $(this).append($('<div/>', {'class': 'news-video-play'}));
 
             $(document).delegate('#'+this.id, 'click', function() {
                 // создаем iframe со включенной опцией autoplay
-                var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1";
-                if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
+                var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1&showinfo=0&controls=0&vq=hd144&enablejsapi=1";
+                // if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
 
                 // Высота и ширина iframe должны быть такими же, как и у родительского блока
                 var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() })
 
                 // Заменяем миниатюру HTML5 плеером с YouTube
-                $(this).replaceWith(iframe);
+                $(this).html(iframe);
             });
         });
      });
 
 
+    $(function() {
+        $(".rutube").each(function() {
+
+            var self = $(this);
+            // Получаем инфу о видео с сервера rutube
+            $.ajax({
+                url: 'http://rutube.ru/api/oembed/?url=http://rutube.ru/tracks/' + this.id + '.html/&format=jsonp',
+                crossDomain: true,
+                dataType:'jsonp',
+                success: function( response ) {
+                    // console.log( response.thumbnail_url ); // server response
+                    // Задаем првьюшку видео
+                    var preview = response.thumbnail_url;
+                    self.find('img').attr('src', 'http:' + preview + '');
+                },
+                error: function( response ) {
+                    console.log( response ); // server response
+                }
+            });
+    
+            // Добавляем иконку Play поверх миниатюры, чтобы было похоже на видеоплеер
+            $(this).append($('<div/>', {'class': 'news-video-play'}));
+
+            $(document).delegate('#'+this.id, 'click', function() {
+                // создаем iframe
+                var iframe_url = "https://rutube.ru/play/embed/" + this.id + "?autoplay=1&autohide=1";
+                if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
+
+                // Высота и ширина iframe должны быть такими же, как и у родительского блока
+                var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() })
+
+                $(this).html(iframe);
+            });
+        });
+    });
+
+    function youtubeVideo() {
+        "use strict";
+        $(".youtube").each(function() {
+            // Зная идентификатор видео на YouTube, легко можно найти его миниатюру
+            $(this).html('<img src="" alt="">')
+            $(this).find('img').attr('src', 'http://img.youtube.com/vi/' + this.id + '/maxresdefault.jpg');
+
+            // Добавляем иконку Play поверх миниатюры, чтобы было похоже на видеоплеер
+            $(this).append($('<div/>', {'class': 'news-video-play'}));
+
+            $(document).delegate('#'+this.id, 'click', function() {
+                // создаем iframe со включенной опцией autoplay
+                var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=0&autohide=1&showinfo=0&controls=0&vq=hd144&enablejsapi=1";
+                // if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
+
+                // Высота и ширина iframe должны быть такими же, как и у родительского блока
+                var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() })
+
+                // Заменяем миниатюру HTML5 плеером с YouTube
+                $(this).html(iframe);
+            });
+        });
+     };
+
+    function rutubeVideo() {
+        "use strict";
+        $(".rutube").each(function() {
+            $(this).html('<img src="" alt="">')
+
+            var self = $(this);
+            // Получаем инфу о видео с сервера rutube
+            $.ajax({
+                url: 'http://rutube.ru/api/oembed/?url=http://rutube.ru/tracks/' + this.id + '.html/&format=jsonp',
+                crossDomain: true,
+                dataType:'jsonp',
+                success: function( response ) {
+                    // console.log( response.thumbnail_url ); // server response
+                    // Задаем првьюшку видео
+                    var preview = response.thumbnail_url;
+                    self.find('img').attr('src', 'http:' + preview + '');
+                },
+                error: function( response ) {
+                    console.log( response ); // server response
+                }
+            });
+    
+            // Добавляем иконку Play поверх миниатюры, чтобы было похоже на видеоплеер
+            $(this).append($('<div/>', {'class': 'news-video-play'}));
+
+            $(document).delegate('#'+this.id, 'click', function() {
+                // создаем iframe
+                var iframe_url = "https://rutube.ru/play/embed/" + this.id + "?autoplay=1&autohide=1";
+                if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
+
+                // Высота и ширина iframe должны быть такими же, как и у родительского блока
+                var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() })
+
+                $(this).html(iframe);
+            });
+        });
+     };
+
+    $('.conc-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        youtubeVideo();
+        rutubeVideo();
+    });
+
 });
+
+
 
 window.scrollBy(0, 1);
 
-
+$(document).ready(function(){
+    $('#load_more').load(function() {
+        $(this).hide();
+    });
+});
